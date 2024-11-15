@@ -1,0 +1,33 @@
+:root {
+  --font_mons: 'Montserrat', sans-serif;
+  --font_wix: 'Wix Madefor Display', serif;
+
+  --background: #f5f6fa;
+  --foreground: #fff;
+  --main_color: #d95043;
+  --second_color: #575ff2;
+  --main_text_color: #212631;
+
+  --block_back: #ffe0de;
+
+  --modal_overlay: rgba(31, 31, 31, 0.4);
+
+  --fs_small: 14px;
+  --fs_xsmall: 16px;
+  --fs_medium: 18px;
+  --fs_large: 24px;
+  --fs_xlarge: 32px;
+  --fs_mxlarge: 40px;
+  --fs_xxlarge: 64px;
+  --fs_xxxlarge: 72px;
+
+  --mobile: 328px;
+  --mobile_l: 360px;
+  --mobile_xl: 475px;
+  --tablet: 768px;
+  --laptop: 1024px;
+  --desktop: 1408px;
+
+  --container: 91.1%;
+  --container_mob: 85%;
+}

@@ -1,0 +1,32 @@
+.header {
+  width: var(--container);
+  margin: 0 auto;
+  background-color: var(--foreground);
+  border-radius: 0 0 32px 32px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.logo_wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo_text {
+  font-weight: 600;
+  line-height: 19.5px;
+}
+
+.burger_wrap {
+  width: 56px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 16px;
+  background-color: var(--background);
+}

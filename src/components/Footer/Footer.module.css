@@ -1,0 +1,15 @@
+.footer {
+  width: 100%;
+  background-color: var(--foreground);
+}
+
+.container {
+  margin: 0 auto;
+  width: var(--container);
+  padding: 40px 0 80px;
+
+  @media (min-width: 1408px) {
+    max-width: var(--desktop);
+    padding: 60px 0 120px;
+  }
+}

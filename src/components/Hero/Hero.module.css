@@ -1,0 +1,81 @@
+.hero {
+  width: var(--container);
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.header {
+  font-family: var(--font_wix);
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 38.4px;
+  margin-bottom: 16px;
+}
+
+.text {
+  font-size: 14px;
+  line-height: 21px;
+  margin-bottom: 24px;
+}
+
+.button_wrap {
+  width: 100%;
+  padding: 24px 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-direction: column;
+  border-radius: 32px;
+  background-color: var(--block_back);
+  margin-bottom: -45px;
+}
+
+.button_text {
+  color: var(--main_color);
+  font-size: 16px;
+  text-align: center;
+
+  & span {
+    font-weight: 700;
+  }
+}
+
+.background {
+  width: 100%;
+  aspect-ratio: 363/242;
+  background-image: url('../../img/hero/mob_back.webp');
+  background-repeat: no-repeat;
+  background-size: contain;
+  pointer-events: none;
+  margin-bottom: -57px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  & li {
+    width: 100%;
+    padding: 32px;
+    background-color: var(--main_text_color);
+    border-radius: 32px;
+  }
+
+  & img {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 24px;
+    filter: drop-shadow(-12px 8px 60px #f6cce733)
+      drop-shadow(0px 0px 40px #f6cce733) drop-shadow(-12px 8px 60px #d8f2f233)
+      drop-shadow(0px 0px 40px #d8f2f233) drop-shadow(20px 8px 60px #d9dbff33)
+      drop-shadow(0px 0px 40px #d9dbff33);
+  }
+
+  & p {
+    color: var(--background);
+    font-weight: 600;
+    line-height: 24px;
+  }
+}
