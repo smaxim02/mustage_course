@@ -16,6 +16,9 @@ import live from '../img/advantages/live.webp';
 import note from '../img/advantages/note.webp';
 import time from '../img/advantages/time.webp';
 
+import gambl from '../img/start/gambl.webp';
+import diamond from '../img/start/diamond.webp';
+
 export const heroItems = [
   {
     text: 'Hero.blockText.first',
@@ -190,5 +193,23 @@ export const consumablesItems = [
   {
     text: 'Consumables.items.fifth',
     id: 'spy',
+  },
+];
+
+export const startItems = [
+  'Start.items.first',
+  'Start.items.second',
+  'Start.items.third',
+  'Start.items.fourth',
+];
+
+export const startInfo = [
+  {
+    text: 'Start.gamblText',
+    logo: gambl,
+  },
+  {
+    text: 'Start.infoText',
+    logo: diamond,
   },
 ];
