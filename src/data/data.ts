@@ -2,6 +2,13 @@ import game from '../img/hero/game.webp';
 import bar from '../img/hero/bar.webp';
 import laptop from '../img/hero/laptop.webp';
 
+import detect from '../img/instruments/detect.webp';
+import fb from '../img/instruments/fb.webp';
+import instrument from '../img/instruments/instrument.webp';
+import keitaro from '../img/instruments/keitaro.webp';
+import proxy from '../img/instruments/proxy.webp';
+import spy from '../img/instruments/spy.webp';
+
 export const heroItems = [
   {
     text: 'Hero.blockText.first',
@@ -17,103 +24,71 @@ export const heroItems = [
   },
 ];
 
-// export const clientsItems = [
-//   {
-//     id: 'proxyClient',
-//     img: proxyClient,
-//     link: 'Clients.link',
-//   },
-//   {
-//     id: 'cloakingHouse',
-//     img: cloaking,
-//     link: 'Clients.link',
-//   },
-//   {
-//     id: 'digitalOcean',
-//     img: digital,
-//     link: 'Clients.link',
-//   },
-// ];
-
-// export const futureItems = [
-//   'Future.products',
-//   'Future.development',
-//   'Future.position',
-//   'Future.tech',
-// ];
-
-// export const contactsTexts = [
-//   {
-//     textKey: 'supportCreatives',
-//     name: '@mustage_creo',
-//     link: 'mustage_creo',
-//   },
-//   {
-//     textKey: 'supportAccounts',
-//     name: '@mustage_support',
-//     link: 'mustage_support',
-//   },
-//   {
-//     textKey: 'supportProxies',
-//     name: '@mustage_proxy',
-//     link: 'mustage_proxy',
-//   },
-//   {
-//     textKey: 'courseCurator',
-//     name: '@mustage_study',
-//     link: 'mustage_study',
-//   },
-// ];
-
-// export const resourseItems = [
-//   {
-//     text: 'Footer.profile',
-//     icon: 'icon-profile',
-//     link: 'https://mustage.site/',
-//   },
-//   {
-//     text: 'Footer.proxy',
-//     icon: 'icon-ua-proxy',
-//     link: 'https://proxy.mustage.io/',
-//   },
-//   {
-//     text: 'Footer.graduation',
-//     icon: 'icon-graduation',
-//     link: 'https://mustage.io/course',
-//   },
-//   {
-//     text: 'Footer.creativity',
-//     icon: 'icon-creativity-order',
-//     link: 'https://mustage.io/creo',
-//   },
-//   {
-//     text: 'Footer.portfolio',
-//     icon: 'icon-portfolio',
-//     link: 'https://t.me/mustage_portfolio',
-//   },
-//   {
-//     text: 'Footer.youtube',
-//     icon: 'icon-youtube-footer',
-//     link: 'https://www.youtube.com/@usaffiliate',
-//   },
-//   {
-//     text: 'Footer.telegram',
-//     icon: 'icon-telegram-footer',
-//     link: 'https://t.me/mustage_channel',
-//   },
-//   {
-//     text: 'Footer.telegramChat',
-//     icon: 'icon-telegram-footer',
-//     link: 'https://t.me/+4oFlq242zzszZmQ6',
-//   },
-//   {
-//     text: 'Footer.instagram',
-//     icon: 'icon-instagram',
-//     link: 'https://www.instagram.com/mustage.team/',
-//   },
-//   {
-//     text: 'Footer.tikTok',
-//     icon: 'icon-tik-tok',
-//     link: 'https://www.tiktok.com/@mustage.io',
-//   },
-// ];
+export const instrumentsItems = [
+  {
+    text: {
+      first: 'Instruments.text.detect.first',
+      second: 'Instruments.text.detect.second',
+      third: 'Instruments.text.detect.third',
+      fourth: 'Instruments.text.detect.fourth',
+      fifth: 'Instruments.text.detect.fifth',
+      sixth: 'Instruments.text.detect.sixth',
+    },
+    img: detect,
+  },
+  {
+    text: {
+      first: 'Instruments.text.instrument.first',
+      second: 'Instruments.text.instrument.second',
+      third: 'Instruments.text.instrument.third',
+      fourth: 'Instruments.text.instrument.fourth',
+      fifth: 'Instruments.text.instrument.fifth',
+      sixth: 'Instruments.text.instrument.sixth',
+    },
+    img: instrument,
+  },
+  {
+    text: {
+      first: 'Instruments.text.proxy.first',
+      second: 'Instruments.text.proxy.second',
+      third: 'Instruments.text.proxy.third',
+      fourth: 'Instruments.text.proxy.fourth',
+      fifth: 'Instruments.text.proxy.fifth',
+      sixth: 'Instruments.text.proxy.sixth',
+    },
+    img: proxy,
+  },
+  {
+    text: {
+      first: 'Instruments.text.keitaro.first',
+      second: 'Instruments.text.keitaro.second',
+      third: 'Instruments.text.keitaro.third',
+      fourth: 'Instruments.text.keitaro.fourth',
+      fifth: 'Instruments.text.keitaro.fifth',
+      sixth: 'Instruments.text.keitaro.sixth',
+    },
+    img: keitaro,
+  },
+  {
+    text: {
+      first: 'Instruments.text.spy.first',
+      second: 'Instruments.text.spy.second',
+      third: 'Instruments.text.spy.third',
+      fourth: 'Instruments.text.spy.fourth',
+      fifth: 'Instruments.text.spy.fifth',
+      sixth: 'Instruments.text.spy.sixth',
+    },
+    img: spy,
+  },
+  {
+    text: {
+      first: 'Instruments.text.fb.first',
+      second: 'Instruments.text.fb.second',
+      third: 'Instruments.text.fb.third',
+      fourth: 'Instruments.text.fb.fourth',
+      fifth: 'Instruments.text.fb.fifth',
+      sixth: 'Instruments.text.fb.sixth',
+    },
+    img: fb,
+  },
+];

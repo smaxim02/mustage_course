@@ -6,7 +6,7 @@
 
 .header {
   font-family: var(--font_wix);
-  font-size: 32px;
+  font-size: var(--fs_xlarge);
   font-weight: 800;
   line-height: 38.4px;
   margin-bottom: 16px;
@@ -54,11 +54,11 @@
 .list {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 8px;
 
   & li {
     width: 100%;
-    padding: 32px;
+    padding: 24px 55px 24px 24px;
     background-color: var(--main_text_color);
     border-radius: 32px;
   }
@@ -77,5 +77,6 @@
     color: var(--background);
     font-weight: 600;
     line-height: 24px;
+    font-size: var(--fs_small);
   }
 }
