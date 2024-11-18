@@ -1,4 +1,5 @@
 import Advantages from '@/components/Advantages/Advantages';
+import Consumables from '@/components/Consumables/Consumables';
 import Hero from '@/components/Hero/Hero';
 import Instruments from '@/components/Instruments/Instruments';
 import MustHave from '@/components/MustHave/MustHave';
@@ -12,6 +13,7 @@ export default function Home() {
       <Working />
       <MustHave />
       <Advantages />
+      <Consumables />
     </>
   );
 }

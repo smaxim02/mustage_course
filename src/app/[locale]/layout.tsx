@@ -11,12 +11,14 @@ const montserrat = Montserrat({
   subsets: ['latin'],
   weight: ['300', '400', '500', '600', '700', '800'],
   variable: '--font_mons',
+  adjustFontFallback: false,
 });
 
 const wixMadeforDisplay = Wix_Madefor_Display({
   subsets: ['latin'],
   weight: ['700', '800'],
   variable: '--font_wix',
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
@@ -64,9 +66,6 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <Head>
-        <meta name="next-size-adjust" content="400" />
-      </Head>
       <NextIntlClientProvider messages={messages}>
         <body
           className={`${montserrat.variable} ${wixMadeforDisplay.variable}`}

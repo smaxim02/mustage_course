@@ -1,7 +1,6 @@
 import styles from './Advantages.module.css';
 import { useTranslations } from 'next-intl';
 import { advantagesItems } from '@/data/data';
-import Icon from '@/helpers/Icon';
 import Image from 'next/image';
 
 export default function Advantages() {
@@ -20,7 +19,7 @@ export default function Advantages() {
                 width={0}
                 height={0}
                 sizes="100vw"
-                alt="Laptop icon"
+                alt="Advantage icon"
                 priority
               />
             </div>

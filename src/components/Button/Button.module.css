@@ -13,6 +13,11 @@
   color: var(--background);
   font-weight: 600;
   transition: all 0.3s ease;
+  margin: 0 auto;
+
+  &.noArrow {
+    justify-content: center;
+  }
 }
 
 .button::before {
@@ -38,6 +43,10 @@
 }
 
 .noArrow::after {
+  display: none;
+}
+
+.noArrow::before {
   display: none;
 }
 

@@ -168,3 +168,27 @@ export const advantagesItems = [
     logo: friends,
   },
 ];
+
+export const consumablesItems = [
+  {
+    text: 'Consumables.items.first',
+    id: 'track',
+  },
+  {
+    text: 'Consumables.items.second',
+    id: 'acc',
+  },
+  {
+    text: 'Consumables.items.third',
+    id: 'browser',
+  },
+
+  {
+    text: 'Consumables.items.fourth',
+    id: 'proxy',
+  },
+  {
+    text: 'Consumables.items.fifth',
+    id: 'spy',
+  },
+];
