@@ -16,6 +16,9 @@
 .list {
   & li {
     margin-bottom: 16px;
+    &:last-child {
+      margin-bottom: 0;
+    }
     &:nth-child(4) {
       & img {
         width: 80px;

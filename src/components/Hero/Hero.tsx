@@ -1,5 +1,4 @@
 import styles from './Hero.module.css';
-import logo from '../../img/hero/logo.svg';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import Button from '../Button/Button';

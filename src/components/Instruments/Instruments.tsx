@@ -18,7 +18,7 @@ export default function Instruments() {
                 width={0}
                 height={0}
                 sizes="100vw"
-                alt="Advantages icon"
+                alt="Instruments icon"
                 priority
               />
             </div>
