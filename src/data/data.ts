@@ -26,6 +26,16 @@ import smm from '../img/study/smm.webp';
 import student from '../img/study/student.webp';
 import target from '../img/study/target.webp';
 
+import rev1 from '../img/feedback/rev1.webp';
+import rev2 from '../img/feedback/rev2.webp';
+import rev3 from '../img/feedback/rev3.webp';
+import rev4 from '../img/feedback/rev4.webp';
+import rev5 from '../img/feedback/rev5.webp';
+import rev6 from '../img/feedback/rev6.webp';
+import rev7 from '../img/feedback/rev7.webp';
+import rev8 from '../img/feedback/rev8.webp';
+import rev9 from '../img/feedback/rev9.webp';
+
 interface ProgramItem {
   itemsHeader: string;
   time: {
@@ -618,4 +628,16 @@ export const programItems: ProgramItem[] = [
       },
     },
   },
+];
+
+export const feedbackItems = [
+  rev1,
+  rev2,
+  rev3,
+  rev4,
+  rev5,
+  rev6,
+  rev7,
+  rev8,
+  rev9,
 ];

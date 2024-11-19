@@ -12,7 +12,7 @@
   margin-bottom: 40px;
 
   & span {
-    color: #d95043;
+    color: var(--main_color);
   }
 }
 

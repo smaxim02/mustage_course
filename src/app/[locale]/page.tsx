@@ -1,6 +1,7 @@
 import Advantages from '@/components/Advantages/Advantages';
 import Consumables from '@/components/Consumables/Consumables';
 import EasyMoney from '@/components/EasyMoney/EasyMoney';
+import Feedback from '@/components/Feedback/Feedback';
 import Hero from '@/components/Hero/Hero';
 import Instruments from '@/components/Instruments/Instruments';
 import MustHave from '@/components/MustHave/MustHave';
@@ -22,6 +23,7 @@ export default function Home() {
       <EasyMoney />
       <Study />
       <Program />
+      <Feedback />
     </>
   );
 }

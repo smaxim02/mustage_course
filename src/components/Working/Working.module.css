@@ -111,7 +111,7 @@
   margin-bottom: 8px;
 
   & p {
-    color: #d95043;
+    color: var(--main_color);
     font-size: var(--fs_large);
     font-weight: 600;
     line-height: 36px;
@@ -120,7 +120,7 @@
 }
 
 .button_text {
-  color: #d95043;
+  color: var(--main_color);
   font-size: var(--fs_small);
   font-weight: 400;
   line-height: 21px;
