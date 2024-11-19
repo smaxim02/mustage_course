@@ -1,0 +1,41 @@
+.easyMoney {
+  width: var(--container);
+  margin: 0 auto;
+  padding-bottom: 80px;
+}
+
+.header {
+  font-family: var(--font_wix);
+  font-size: var(--fs_xlarge);
+  font-weight: 700;
+  margin-bottom: 40px;
+  line-height: 35.2px;
+}
+
+.wrap {
+  border-radius: 40px;
+  padding: 24px 32px 249px;
+  background-image: url('../../img/easyMoney/back.webp'),
+    url('../../img/easyMoney/lineMob.svg'),
+    radial-gradient(
+      82.98% 20.92% at 50% 90.14%,
+      rgba(63, 168, 168, 0.4) 0%,
+      rgba(216, 242, 242, 0) 100%
+    ),
+    linear-gradient(0deg, #d8f2f2, #d8f2f2);
+  background-repeat: no-repeat;
+  background-position: bottom 21px center, bottom 21px center, bottom center,
+    bottom center;
+  background-size: 85% 30%, contain, 100% 100%, 100% 100%;
+
+  & h2 {
+    font-size: var(--fs_large);
+    font-weight: 600;
+    line-height: 28.8px;
+    margin-bottom: 24px;
+  }
+
+  & p span {
+    font-weight: 800;
+  }
+}
