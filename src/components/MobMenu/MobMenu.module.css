@@ -11,6 +11,10 @@
   transition: transform 500ms ease-in-out, opacity 500ms ease-in-out,
     height 500ms ease-in-out;
   z-index: -1;
+
+  @media (min-width: 768px) {
+    top: 85px;
+  }
 }
 
 .mobile_menu_open {
@@ -32,6 +36,10 @@
   align-items: center;
   gap: 24px;
   flex-direction: column;
+
+  @media (min-width: 768px) {
+    margin: 0 auto;
+  }
 }
 
 .social {

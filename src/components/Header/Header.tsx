@@ -8,6 +8,8 @@ import Icon from '@/helpers/Icon';
 import MobMenu from '../MobMenu/MobMenu';
 import { useState } from 'react';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+import { menuItems } from '@/data/data';
+import Button from '../Button/Button';
 
 export default function Header({ locale }: { locale: string }) {
   const pathname = usePathname();
@@ -36,54 +38,53 @@ export default function Header({ locale }: { locale: string }) {
     <header
       className={`${styles.header} ${isMenuOpen && styles.mobile_menu_open}`}
     >
-      <Link className={styles.logo_wrap} href={`/${locale}/`}>
-        <Icon name="icon-logo" width={40} height={33} />
-        <span className={styles.logo_text}>{t('Header.home')}</span>
-      </Link>
-      {/* <div className={styles.nav_wrap}>
+      <div className={styles.container}>
+        <Link className={styles.logo_wrap} href={`/${locale}/`}>
+          <Icon name="icon-logo" width={40} height={33} />
+          <span className={styles.logo_text}>{t('Header.home')}</span>
+        </Link>
+
         <nav className={styles.nav}>
-          <ul className={styles.nav_list}>
-            {navItems.map((item, index) => (
+          <ul>
+            {menuItems.map((item, index) => (
               <li key={index}>
-                <Link className={styles.nav_link} href={item.href}>
-                  {t(item.label)}
-                </Link>
+                <Link href={item.href}>{t(item.label)}</Link>
               </li>
             ))}
           </ul>
         </nav>
-        <LanguageSwitcher
+        <div className={styles.button_wrap}>
+          <LanguageSwitcher
+            locale={locale}
+            handleLanguageChange={handleLanguageChange}
+          />
+          <Button
+            width="169px"
+            height="56px"
+            link={t('Main.buttonLink')}
+            text={t('Main.buttonFooter')}
+            showArrow={false}
+          />
+        </div>
+
+        <div
+          className={`${styles.burger_wrap} ${
+            isMenuOpen ? styles.burger_open : ''
+          }`}
+          onClick={isMenuOpen ? closeMenu : openMenu}
+        >
+          <span className={styles.line}></span>
+          <span className={styles.line}></span>
+          <span className={styles.line}></span>
+        </div>
+
+        <MobMenu
           locale={locale}
           handleLanguageChange={handleLanguageChange}
+          isMenuOpen={isMenuOpen}
+          closeMenu={closeMenu}
         />
-      </div> */}
-      {/* {!isMenuOpen ? (
-        <div className={styles.burger_wrap} onClick={openMenu}>
-          <Icon name="icon-burger" width={16} height={16} />
-        </div>
-      ) : (
-        <div className={styles.burger_wrap} onClick={closeMenu}>
-          <Icon name="icon-close" width={16} height={16} />
-        </div>
-      )} */}
-
-      <div
-        className={`${styles.burger_wrap} ${
-          isMenuOpen ? styles.burger_open : ''
-        }`}
-        onClick={isMenuOpen ? closeMenu : openMenu}
-      >
-        <span className={styles.line}></span>
-        <span className={styles.line}></span>
-        <span className={styles.line}></span>
       </div>
-
-      <MobMenu
-        locale={locale}
-        handleLanguageChange={handleLanguageChange}
-        isMenuOpen={isMenuOpen}
-        closeMenu={closeMenu}
-      />
     </header>
   );
 }

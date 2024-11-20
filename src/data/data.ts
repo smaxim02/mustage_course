@@ -685,6 +685,14 @@ export const menuItems = [
   { label: 'Footer.menu.possibility', href: '#possibility' },
   { label: 'Footer.menu.about', href: '#about' },
   { label: 'Footer.menu.program', href: '#program' },
+  { label: 'Footer.menu.feedback', href: '#feedback' },
+];
+
+export const menuItemsFooter = [
+  { label: 'Footer.menu.instruments', href: '#instruments' },
+  { label: 'Footer.menu.possibility', href: '#possibility' },
+  { label: 'Footer.menu.about', href: '#about' },
+  { label: 'Footer.menu.program', href: '#program' },
   { label: 'Footer.menu.faq', href: '#faq' },
 ];
 
