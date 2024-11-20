@@ -16,12 +16,22 @@ export default function Hero() {
           {t('Hero.buttonText.first')}
           <span>{t('Hero.buttonText.second')}</span>
         </p>
-        <Button
-          width="76.5%"
-          height="56px"
-          link={t('Main.buttonLink')}
-          text={t('Main.button')}
-        />
+        <div className={styles.mob_button}>
+          <Button
+            width="76.5%"
+            height="56px"
+            link={t('Main.buttonLink')}
+            text={t('Main.button')}
+          />
+        </div>
+        <div className={styles.desk_button}>
+          <Button
+            width="233px"
+            link={t('Main.buttonLink')}
+            text={t('Main.buttonHero')}
+            showArrow={false}
+          />
+        </div>
       </div>
 
       <div className={styles.background}></div>
