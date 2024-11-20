@@ -72,7 +72,7 @@ export default async function RootLayout({
         >
           <Header locale={locale} />
           <main>{children}</main>
-          <Footer />
+          <Footer locale={locale} />
         </body>
       </NextIntlClientProvider>
     </html>

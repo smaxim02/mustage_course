@@ -641,3 +641,55 @@ export const feedbackItems = [
   rev8,
   rev9,
 ];
+
+export const answersItems = [
+  {
+    itemsId: '01.',
+    itemsHeader: 'Answers.itemsHeader.first',
+    itemsText: 'Answers.itemsText.first',
+  },
+  {
+    itemsId: '02.',
+    itemsHeader: 'Answers.itemsHeader.second',
+    itemsText: 'Answers.itemsText.second',
+  },
+  {
+    itemsId: '03.',
+    itemsHeader: 'Answers.itemsHeader.third',
+    itemsText: 'Answers.itemsText.third',
+  },
+  {
+    itemsId: '04.',
+    itemsHeader: 'Answers.itemsHeader.fourth',
+    itemsText: 'Answers.itemsText.fourth',
+  },
+  {
+    itemsId: '05.',
+    itemsHeader: 'Answers.itemsHeader.fifth',
+    itemsText: 'Answers.itemsText.fifth',
+  },
+  {
+    itemsId: '06.',
+    itemsHeader: 'Answers.itemsHeader.sixth',
+    itemsText: 'Answers.itemsText.sixth',
+  },
+  {
+    itemsId: '07.',
+    itemsHeader: 'Answers.itemsHeader.seventh',
+    itemsText: 'Answers.itemsText.seventh',
+  },
+];
+
+export const menuItems = [
+  { label: 'Footer.menu.instruments', href: '#instruments' },
+  { label: 'Footer.menu.possibility', href: '#possibility' },
+  { label: 'Footer.menu.about', href: '#about' },
+  { label: 'Footer.menu.program', href: '#program' },
+  { label: 'Footer.menu.faq', href: '#faq' },
+];
+
+export const socialItems = [
+  { icon: 'icon-tg', link: 'https://www.youtube.com/@usaffiliate' },
+  { icon: 'icon-youtube', link: 'https://www.youtube.com/@usaffiliate' },
+  { icon: 'icon-tik', link: 'https://www.tiktok.com/@mustage.io' },
+];

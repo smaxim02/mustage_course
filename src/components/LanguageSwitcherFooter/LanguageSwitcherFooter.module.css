@@ -4,7 +4,7 @@
   align-items: center;
   border-radius: 24px;
   padding: 8px;
-  background-color: #f5f5f5;
+  background-color: #f5f6fa33;
 
   & button {
     background-color: transparent;
@@ -13,6 +13,7 @@
     height: 40px;
     padding: 10px 11px;
     text-align: center;
+    color: var(--background);
     font-family: var(--font_mons);
     font-size: var(--fs_xsmall);
     font-weight: 500;
@@ -20,15 +21,13 @@
     transition: background-color 0.3s ease;
 
     &:hover {
-      background-color: #d9dbff;
+      background-color: #858d9f;
       font-weight: 600;
-      color: var(--second_color);
     }
   }
 
   & .buttonActive {
-    background-color: #d9dbff;
+    background-color: #858d9f;
     font-weight: 600;
-    color: var(--second_color);
   }
 }

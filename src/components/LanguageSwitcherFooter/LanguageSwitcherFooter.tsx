@@ -1,11 +1,11 @@
-import styles from './LanguageSwitcher.module.css';
+import styles from './LanguageSwitcherFooter.module.css';
 
-interface LanguageSwitcherProps {
+interface LanguageSwitcherFooterProps {
   handleLanguageChange: (language: string) => void;
   locale: string;
 }
 
-const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
+const LanguageSwitcherFooter: React.FC<LanguageSwitcherFooterProps> = ({
   handleLanguageChange,
   locale,
 }) => {
@@ -33,4 +33,4 @@ const LanguageSwitcher: React.FC<LanguageSwitcherProps> = ({
   );
 };
 
-export default LanguageSwitcher;
+export default LanguageSwitcherFooter;

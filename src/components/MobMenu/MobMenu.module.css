@@ -1,52 +1,84 @@
 .mobile_wrap {
   display: flex;
   position: absolute;
-  top: 0;
-  left: -5%;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 350ms ease-in-out;
+  top: 80px;
+  left: 0;
+  width: 100vw;
+  height: 0;
+  transform: scaleY(0);
+  transform-origin: top;
+  opacity: 0;
+  transition: transform 500ms ease-in-out, opacity 500ms ease-in-out,
+    height 500ms ease-in-out;
+  z-index: -1;
 }
 
 .mobile_menu_open {
-  position: absolute;
-  top: 0;
-  left: -5%;
-  transform: scaleX(1);
-  transform-origin: left;
-  z-index: 1000;
-  width: 100vh;
   height: 100vh;
-  background-color: var(--modal_overlay);
+  transform: scaleY(1);
+  opacity: 1;
+  z-index: 1000;
 }
 
 .burger_menu {
-  width: 260px;
-  height: 100vh;
-  background-color: var(--header-back);
-  padding: 40px 16px 80px;
-  backdrop-filter: blur(35px);
+  width: var(--container);
+  height: 428px;
+  background-color: var(--foreground);
+  border-radius: 0 0 32px 32px;
+  border-top: 1px solid #d9dbff;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-direction: column;
 }
 
-.mobile_link {
-  margin-bottom: 16px;
-  & a {
-    font-size: var(--fs_small);
-    line-height: 19.5px;
-    color: #f7f7f7;
+.social {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  height: 32px;
+
+  & li {
+    height: 32px;
+
+    & a {
+      height: 32px;
+
+      & svg {
+        fill: #858d9f;
+        transition: fill 0.3s ease;
+        width: 32px;
+        height: 32px;
+      }
+
+      & svg:hover {
+        fill: var(--main_text_color);
+      }
+    }
   }
 }
 
-.logo_text {
-  font-size: var(--fs_small);
-  font-weight: 700;
-  line-height: 19.5px;
-  color: var(--header-text-color);
+.button_wrap {
+  & a {
+    min-width: auto;
+  }
 }
 
-.logo_wrap {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 40px;
+.nav {
+  & li {
+    margin-bottom: 11px;
+
+    & a {
+      font-family: var(--font_mons);
+      font-size: var(--fs_xsmall);
+      font-weight: 500;
+      line-height: 19.5px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 }

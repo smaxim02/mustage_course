@@ -7,7 +7,6 @@ import styles from './Header.module.css';
 import Icon from '@/helpers/Icon';
 import MobMenu from '../MobMenu/MobMenu';
 import { useState } from 'react';
-// import { navItems } from '@/data/data';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 
 export default function Header({ locale }: { locale: string }) {
@@ -34,7 +33,9 @@ export default function Header({ locale }: { locale: string }) {
     document.body.style.touchAction = 'none';
   };
   return (
-    <header className={styles.header}>
+    <header
+      className={`${styles.header} ${isMenuOpen && styles.mobile_menu_open}`}
+    >
       <Link className={styles.logo_wrap} href={`/${locale}/`}>
         <Icon name="icon-logo" width={40} height={33} />
         <span className={styles.logo_text}>{t('Header.home')}</span>
@@ -56,7 +57,7 @@ export default function Header({ locale }: { locale: string }) {
           handleLanguageChange={handleLanguageChange}
         />
       </div> */}
-      {!isMenuOpen ? (
+      {/* {!isMenuOpen ? (
         <div className={styles.burger_wrap} onClick={openMenu}>
           <Icon name="icon-burger" width={16} height={16} />
         </div>
@@ -64,8 +65,25 @@ export default function Header({ locale }: { locale: string }) {
         <div className={styles.burger_wrap} onClick={closeMenu}>
           <Icon name="icon-close" width={16} height={16} />
         </div>
-      )}
-      <MobMenu isMenuOpen={isMenuOpen} closeMenu={closeMenu} />
+      )} */}
+
+      <div
+        className={`${styles.burger_wrap} ${
+          isMenuOpen ? styles.burger_open : ''
+        }`}
+        onClick={isMenuOpen ? closeMenu : openMenu}
+      >
+        <span className={styles.line}></span>
+        <span className={styles.line}></span>
+        <span className={styles.line}></span>
+      </div>
+
+      <MobMenu
+        locale={locale}
+        handleLanguageChange={handleLanguageChange}
+        isMenuOpen={isMenuOpen}
+        closeMenu={closeMenu}
+      />
     </header>
   );
 }
