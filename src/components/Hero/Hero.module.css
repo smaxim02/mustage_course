@@ -12,6 +12,7 @@
   @media (min-width: 1024px) {
     padding-top: 190px;
     max-width: var(--desktop);
+    padding-bottom: 120px;
   }
 }
 
@@ -23,15 +24,18 @@
   margin-bottom: 16px;
 
   @media (min-width: 768px) {
+    max-width: 600px;
     font-size: var(--fs_mxlarge);
   }
 
   @media (min-width: 1024px) {
+    max-width: 870px;
     font-size: var(--fs_xxlarge);
     margin-bottom: 20px;
   }
 
   @media (min-width: 1408px) {
+    max-width: 1400px;
     font-size: var(--fs_xxxlarge);
     line-height: 79.2px;
     margin-bottom: 24px;
@@ -47,15 +51,17 @@
     font-size: var(--fs_xsmall);
     line-height: 24px;
     margin-bottom: 28px;
-    max-width: 660px;
+    max-width: 550px;
   }
 
   @media (min-width: 1024px) {
     margin-bottom: 36px;
+    max-width: 600px;
   }
 
   @media (min-width: 1408px) {
     margin-bottom: 48px;
+    max-width: 660px;
   }
 }
 
@@ -76,6 +82,7 @@
     padding: 16px 24px;
     flex-direction: row;
     gap: 24px;
+    margin-bottom: 48px;
   }
 
   @media (min-width: 1024px) {
@@ -121,6 +128,7 @@
 }
 
 .mob_button {
+  width: 100%;
   @media (min-width: 768px) {
     display: none;
   }
@@ -142,14 +150,26 @@
   pointer-events: none;
   margin-bottom: -57px;
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     position: absolute;
     z-index: -1;
-    top: 83px;
-    left: 31%;
-    width: 1400px;
+    top: 3%;
+    left: 46%;
+    width: 800px;
     aspect-ratio: 1400/932;
     background-image: url('../../img/hero/back.webp');
+  }
+
+  @media (min-width: 1024px) {
+    left: 40%;
+    top: 15%;
+    width: 1000px;
+  }
+
+  @media (min-width: 1408px) {
+    left: 31%;
+    top: 83px;
+    width: 1400px;
   }
 }
 
@@ -169,10 +189,13 @@
     width: 48px;
     height: 48px;
     margin-bottom: 24px;
+    transition: filter 0.3s ease;
+  }
+
+  & img:hover {
     filter: drop-shadow(-12px 8px 60px #f6cce733)
       drop-shadow(0px 0px 40px #f6cce733) drop-shadow(-12px 8px 60px #d8f2f233)
-      drop-shadow(0px 0px 40px #d8f2f233) drop-shadow(20px 8px 60px #d9dbff33)
-      drop-shadow(0px 0px 40px #d9dbff33);
+      drop-shadow(0px 0px 40px #d8f2f233);
   }
 
   & p {
@@ -182,7 +205,7 @@
     font-size: var(--fs_small);
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 768px) {
     flex-direction: row;
     gap: 16px;
     justify-content: space-between;
@@ -200,11 +223,13 @@
         height: 56px;
         margin-bottom: 0px;
       }
+    }
+  }
 
-      & p {
-        line-height: 27px;
-        font-size: var(--fs_medium);
-      }
+  @media (min-width: 1024px) {
+    & p {
+      line-height: 27px;
+      font-size: var(--fs_medium);
     }
   }
 }
