@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import '../../styles/globals.css';
-import Head from 'next/head';
 import { NextIntlClientProvider } from 'next-intl';
 import { Montserrat, Wix_Madefor_Display } from 'next/font/google';
 import Header from '@/components/Header/Header';
