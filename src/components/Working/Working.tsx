@@ -22,27 +22,32 @@ export default function Working() {
             </li>
           ))}
         </ul>
-        <div className={styles.img_wrap}>
-          <Image
-            src={logo}
-            width={0}
-            height={0}
-            sizes="100vw"
-            alt="Worker logo"
-            priority
-          />
+        <div className={styles.wrap}>
+          <div className={styles.img_wrap}>
+            <Image
+              src={logo}
+              width={0}
+              height={0}
+              sizes="100vw"
+              alt="Worker logo"
+              priority
+            />
+          </div>
+          <p className={styles.text}>{t('Working.text')}</p>
+          <div className={styles.button_par_wrap}>
+            <div className={styles.button_wrap}>
+              <p>{t('Working.buttonText.first')}</p>
+              <Button
+                width="76.5%"
+                link={t('Main.buttonLink')}
+                text={t('Main.button')}
+              />
+            </div>
+            <p className={styles.button_text}>
+              {t('Working.buttonText.second')}
+            </p>
+          </div>
         </div>
-        <p className={styles.text}>{t('Working.text')}</p>
-        <div className={styles.button_wrap}>
-          <p>{t('Working.buttonText.first')}</p>
-          <Button
-            width="76.5%"
-            height="56px"
-            link={t('Main.buttonLink')}
-            text={t('Main.button')}
-          />
-        </div>
-        <p className={styles.button_text}>{t('Working.buttonText.second')}</p>
       </div>
     </section>
   );
