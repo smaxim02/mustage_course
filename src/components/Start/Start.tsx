@@ -16,57 +16,61 @@ export default function Start() {
         {t('Start.header.first')} <span>{t('Start.header.second')}</span>
         {t('Start.header.third')}
       </h1>
-      <div className={styles.list_wrap}>
-        <h2 className={styles.list_header}>{t('Start.itemsHeader')}</h2>
-        <ul className={styles.list}>
-          {startItems.map((item, index) => (
-            <li key={index}>
-              <div className={styles.icon_wrap}>
-                <Icon name="icon-star" width={12} height={12} />
-              </div>
-              <p>{t(item)}</p>
-            </li>
-          ))}
-        </ul>
-        <p>
-          {t('Start.itemsText.first')}
-          <span>{t('Start.itemsText.second')}</span>
-          {t('Start.itemsText.third')}
-        </p>
-        <Image
-          src={logo}
-          width={0}
-          height={0}
-          sizes="100vw"
-          alt="Starts icon"
-          priority
-        />
-      </div>
-      <div className={styles.stat_wrap}>
-        <div>
-          <span>17.7k</span>
-          <p>{t('Start.videoFollow')}</p>
+      <div className={styles.wrap}>
+        <div className={styles.list_wrap}>
+          <h2 className={styles.list_header}>{t('Start.itemsHeader')}</h2>
+          <ul className={styles.list}>
+            {startItems.map((item, index) => (
+              <li key={index}>
+                <div className={styles.icon_wrap}>
+                  <Icon name="icon-star" width={12} height={12} />
+                </div>
+                <p>{t(item)}</p>
+              </li>
+            ))}
+          </ul>
+          <p>
+            {t('Start.itemsText.first')}
+            <span>{t('Start.itemsText.second')}</span>
+            {t('Start.itemsText.third')}
+          </p>
+          <Image
+            src={logo}
+            width={0}
+            height={0}
+            sizes="100vw"
+            alt="Starts icon"
+            priority
+          />
         </div>
-        <div>
-          <span>70+</span>
-          <p>{t('Start.videoHack')}</p>
+        <div className={styles.second_wrap}>
+          <div className={styles.stat_wrap}>
+            <div>
+              <span>17.7k</span>
+              <p>{t('Start.videoFollow')}</p>
+            </div>
+            <div>
+              <span>70+</span>
+              <p>{t('Start.videoHack')}</p>
+            </div>
+          </div>
+          <ul className={styles.info_wrap}>
+            {startInfo.map((item, index) => (
+              <li key={index}>
+                <Image
+                  src={item.logo}
+                  width={0}
+                  height={0}
+                  sizes="100vw"
+                  alt="Info icon"
+                  priority
+                />
+                <p>{t(item.text)}</p>
+              </li>
+            ))}
+          </ul>
         </div>
       </div>
-      <ul className={styles.info_wrap}>
-        {startInfo.map((item, index) => (
-          <li key={index}>
-            <Image
-              src={item.logo}
-              width={0}
-              height={0}
-              sizes="100vw"
-              alt="Info icon"
-              priority
-            />
-            <p>{t(item.text)}</p>
-          </li>
-        ))}
-      </ul>
       <div className={styles.gift_wrap}>
         <Image
           src={gift}
@@ -83,7 +87,6 @@ export default function Start() {
 
         <Button
           width="100%"
-          height="56px"
           link={t('Main.buttonLink')}
           text={t('Main.buttonSecond')}
         />

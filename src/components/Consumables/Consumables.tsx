@@ -38,13 +38,14 @@ export default function Consumables() {
             {t('Consumables.blockText.third')}
           </p>
         </div>
-        <Button
-          width="70%"
-          height="56px"
-          link={t('Main.buttonLink')}
-          text={t('Main.buttonSecond')}
-          showArrow={false}
-        />
+        <div className={styles.button_wrap}>
+          <Button
+            width="70%"
+            link={t('Main.buttonLink')}
+            text={t('Main.buttonSecond')}
+            showArrow={false}
+          />
+        </div>
       </div>
     </section>
   );
