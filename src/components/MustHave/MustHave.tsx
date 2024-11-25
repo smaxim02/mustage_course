@@ -15,55 +15,57 @@ export default function MustHave() {
         {t('MustHave.header.first')} <span>{t('MustHave.header.second')}</span>
         {t('MustHave.header.third')}
       </h1>
-      <div className={styles.list_wrap}>
-        <div className={styles.header_wrap}>
-          <div className={styles.logo_wrap}>
-            <Image
-              src={laptop}
-              width={0}
-              height={0}
-              sizes="100vw"
-              alt="Laptop icon"
-              priority
-            />
+      <div className={styles.wrap}>
+        <div className={styles.list_wrap}>
+          <div className={styles.header_wrap}>
+            <div className={styles.logo_wrap}>
+              <Image
+                src={laptop}
+                width={0}
+                height={0}
+                sizes="100vw"
+                alt="Laptop icon"
+                priority
+              />
+            </div>
+            <h3 className={styles.list_header}>{t('MustHave.blockHeader')}</h3>
           </div>
-          <h3 className={styles.list_header}>{t('MustHave.blockHeader')}</h3>
+          <ul className={styles.list}>
+            {mustHaveItems.map((item, index) => (
+              <li key={index}>
+                <div className={styles.icon_wrap}>
+                  <Icon name="icon-check" width={12} height={9} />
+                </div>
+                <p>{t(item)}</p>
+              </li>
+            ))}
+          </ul>
         </div>
-        <ul className={styles.list}>
-          {mustHaveItems.map((item, index) => (
-            <li key={index}>
-              <div className={styles.icon_wrap}>
-                <Icon name="icon-check" width={12} height={9} />
-              </div>
-              <p>{t(item)}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-      <div className={styles.text_wrap}>
-        <div>
-          <p className={styles.text}>
-            <span>{t('MustHave.text.first')}</span>
-            {t('MustHave.text.second')}
-            <span> {t('MustHave.text.third')}</span>
-            {t('MustHave.text.fourth')}
-            <span>{t('MustHave.text.fifth')}</span>
-            {t('MustHave.text.sixth')}
-          </p>
-          <p className={styles.text}>
-            <span>{t('MustHave.secondText.first')}</span>
-            {t('MustHave.secondText.second')}
-          </p>
+        <div className={styles.text_wrap}>
+          <div>
+            <p className={styles.text}>
+              <span>{t('MustHave.text.first')}</span>
+              {t('MustHave.text.second')}
+              <span> {t('MustHave.text.third')}</span>
+              {t('MustHave.text.fourth')}
+              <span>{t('MustHave.text.fifth')}</span>
+              {t('MustHave.text.sixth')}
+            </p>
+            <p className={styles.text}>
+              <span>{t('MustHave.secondText.first')}</span>
+              {t('MustHave.secondText.second')}
+            </p>
+          </div>
+          <Image
+            className={styles.img_logo}
+            src={logo}
+            width={0}
+            height={0}
+            sizes="100vw"
+            alt="Worker logo"
+            priority
+          />
         </div>
-        <Image
-          className={styles.img_logo}
-          src={logo}
-          width={0}
-          height={0}
-          sizes="100vw"
-          alt="Worker logo"
-          priority
-        />
       </div>
     </section>
   );
