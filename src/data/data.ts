@@ -697,7 +697,7 @@ export const menuItemsFooter = [
 ];
 
 export const socialItems = [
-  { icon: 'icon-tg', link: 'https://www.youtube.com/@usaffiliate' },
+  { icon: 'icon-tg', link: 'https://t.me/usaffiliate' },
   { icon: 'icon-youtube', link: 'https://www.youtube.com/@usaffiliate' },
   { icon: 'icon-tik', link: 'https://www.tiktok.com/@mustage.io' },
 ];

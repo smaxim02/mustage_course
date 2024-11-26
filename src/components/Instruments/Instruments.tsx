@@ -7,7 +7,7 @@ export default function Instruments() {
   const t = useTranslations();
 
   return (
-    <section className={styles.instruments}>
+    <section id="instruments" className={styles.instruments}>
       <h1 className={styles.header}>{t('Instruments.header')}</h1>
       <ul className={styles.list}>
         {instrumentsItems.map((item, index) => (

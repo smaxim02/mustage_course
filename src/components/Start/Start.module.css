@@ -333,8 +333,16 @@
   }
 
   @media (min-width: 1408px) {
+    justify-content: space-between;
     & p {
-      max-width: 780px;
+      max-width: 790px;
+    }
+  }
+
+  @media (min-width: 1546px) {
+    justify-content: flex-start;
+    & p {
+      max-width: 916px;
     }
   }
 }

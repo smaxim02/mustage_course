@@ -18,7 +18,7 @@ export default function Program() {
   };
 
   return (
-    <section className={styles.program}>
+    <section id="program" className={styles.program}>
       <h1 className={styles.header}>
         {t('Program.header.first')} &nbsp;
         <span> {t('Program.header.second')}</span> &nbsp;

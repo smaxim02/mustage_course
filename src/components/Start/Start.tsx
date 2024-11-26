@@ -11,7 +11,7 @@ export default function Start() {
   const t = useTranslations();
 
   return (
-    <section className={styles.start}>
+    <section id="possibility" className={styles.start}>
       <h1 className={styles.header}>
         {t('Start.header.first')} <span>{t('Start.header.second')}</span>
         {t('Start.header.third')}

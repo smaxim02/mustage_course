@@ -2,12 +2,29 @@
   width: var(--container);
   margin: 0 auto;
   padding-bottom: 80px;
+
+  @media (min-width: 1408px) {
+    width: 95%;
+    padding: 80px 32px;
+    background-color: var(--foreground);
+    border-radius: 80px;
+    margin-bottom: 120px;
+  }
 }
 
 .container {
   background-color: var(--foreground);
   border-radius: 40px;
   padding: 24px 24px 40px;
+
+  @media (min-width: 768px) {
+    padding: 40px 20px;
+  }
+  @media (min-width: 1408px) {
+    max-width: var(--desktop);
+    margin: 0 auto;
+    padding: 0;
+  }
 }
 
 .header {
@@ -19,6 +36,36 @@
   & span {
     color: var(--main_color);
   }
+
+  @media (min-width: 768px) {
+    font-size: var(--fs_mxlarge);
+    margin-bottom: 60px;
+    line-height: 1.1;
+    max-width: 580px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: var(--fs_xxlarge);
+    margin-bottom: 80px;
+    max-width: 840px;
+  }
+
+  @media (min-width: 1250px) {
+    max-width: 850px;
+  }
+
+  @media (min-width: 1408px) {
+    font-size: var(--fs_xxxlarge);
+    max-width: 1000px;
+  }
+
+  @media (min-width: 1475px) {
+    max-width: 1114px;
+  }
+
+  @media (min-width: 1530px) {
+    max-width: 1155px;
+  }
 }
 
 .header_wrap {
@@ -28,6 +75,22 @@
   background-repeat: no-repeat;
   background-position: top -33px right -31px;
   background-size: 183px 156px;
+
+  @media (min-width: 768px) {
+    margin: 0;
+    padding: 0;
+    background-position: top 0px right -31px;
+  }
+
+  @media (min-width: 1024px) {
+    background-position: top 0px right -81px;
+    background-size: 350px 270px;
+  }
+
+  @media (min-width: 1408px) {
+    background-position: top -68px right -81px;
+    background-size: 450px 375px;
+  }
 }
 
 .list {
@@ -39,6 +102,15 @@
     width: 160px;
     height: 346px;
   }
+
+  @media (min-width: 1024px) {
+    gap: 16px;
+
+    & img {
+      width: 340px;
+      height: 736px;
+    }
+  }
 }
 
 .list_wrap {
@@ -49,7 +121,7 @@
   pointer-events: none;
   position: absolute;
   top: 0;
-  right: 0;
+  right: -3px;
   width: 72px;
   height: 346px;
   background-image: linear-gradient(
@@ -57,13 +129,18 @@
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255) 100%
   );
+
+  @media (min-width: 1024px) {
+    width: 217px;
+    height: 736px;
+  }
 }
 
 .shadow_left {
   pointer-events: none;
   position: absolute;
   top: 0;
-  left: 0;
+  left: -3px;
   width: 72px;
   height: 346px;
   background-image: linear-gradient(
@@ -71,4 +148,9 @@
     rgba(255, 255, 255, 0) 0%,
     rgba(255, 255, 255) 100%
   );
+
+  @media (min-width: 1024px) {
+    width: 217px;
+    height: 736px;
+  }
 }

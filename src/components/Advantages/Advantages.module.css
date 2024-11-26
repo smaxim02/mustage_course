@@ -66,10 +66,16 @@
     }
 
     & h3 {
-      font-size: var(--fs_large);
+      font-size: 22px;
       font-weight: 600;
       line-height: 29.26px;
       margin-bottom: 16px;
+    }
+
+    @media (min-width: 350px) {
+      & h3 {
+        font-size: var(--fs_large);
+      }
     }
 
     & p {
@@ -88,7 +94,7 @@
       margin-bottom: 0;
 
       & h3 {
-        font-size: var(--fs_xlarge);
+        font-size: 25px;
         line-height: 1.2;
       }
 
@@ -96,6 +102,12 @@
         font-size: var(--fs_xsmall);
         line-height: 24px;
       }
+    }
+  }
+
+  @media (min-width: 1024px) {
+    & h3 {
+      font-size: var(--fs_xlarge);
     }
   }
 

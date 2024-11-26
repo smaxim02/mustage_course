@@ -7,7 +7,7 @@ export default function Feedback() {
   const t = useTranslations();
 
   return (
-    <section className={styles.feedback}>
+    <section id="feedback" className={styles.feedback}>
       <div className={styles.container}>
         <div className={styles.header_wrap}>
           <h1 className={styles.header}>

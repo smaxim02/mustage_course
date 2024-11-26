@@ -18,7 +18,7 @@ export default function Answers() {
   };
 
   return (
-    <section className={styles.answers}>
+    <section id="faq" className={styles.answers}>
       <h1 className={styles.header}>{t('Answers.header')}</h1>
 
       <ul className={styles.list}>

@@ -34,7 +34,7 @@
 
 .wrap {
   border-radius: 40px;
-  padding: 24px 32px 249px;
+  padding: 24px 32px 273px;
   background-image: url('../../img/easyMoney/back.webp'),
     url('../../img/easyMoney/lineMob.svg'),
     radial-gradient(
@@ -75,6 +75,10 @@
     @media (min-width: 1024px) {
       max-width: 55%;
     }
+  }
+
+  @media (min-width: 350px) {
+    padding: 24px 32px 250px;
   }
 
   @media (min-width: 420px) {

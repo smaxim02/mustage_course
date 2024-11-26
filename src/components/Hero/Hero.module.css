@@ -20,7 +20,7 @@
   font-family: var(--font_wix);
   font-size: var(--fs_xlarge);
   font-weight: 800;
-  line-height: 1.1;
+  line-height: 1.2;
   margin-bottom: 16px;
 
   @media (min-width: 768px) {
@@ -29,6 +29,7 @@
   }
 
   @media (min-width: 1024px) {
+    line-height: 1.1;
     max-width: 870px;
     font-size: var(--fs_xxlarge);
     margin-bottom: 20px;
@@ -117,7 +118,7 @@
       content: '';
       position: absolute;
       bottom: -10px;
-      left: 42px;
+      right: -151px;
       width: 140px;
       height: 52px;
       background: url('../../img/hero/arrow.svg') no-repeat;
@@ -180,7 +181,7 @@
 
   & li {
     width: 100%;
-    padding: 24px 55px 24px 24px;
+    padding: 24px;
     background-color: var(--main_text_color);
     border-radius: 32px;
   }
@@ -202,7 +203,7 @@
     color: var(--background);
     font-weight: 600;
     line-height: 24px;
-    font-size: var(--fs_small);
+    font-size: var(--fs_xsmall);
   }
 
   @media (min-width: 768px) {

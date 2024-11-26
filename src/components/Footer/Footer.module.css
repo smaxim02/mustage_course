@@ -1,6 +1,13 @@
 .footer {
   width: var(--container);
   margin: 0 auto;
+
+  @media (min-width: 1408px) {
+    width: 95%;
+    padding: 60px 32px;
+    background-color: var(--main_text_color);
+    border-radius: 80px;
+  }
 }
 
 .container {
@@ -8,6 +15,38 @@
   background-color: var(--main_text_color);
   border-radius: 40px;
   padding: 40px 24px;
+
+  @media (min-width: 1408px) {
+    padding: 0;
+    max-width: var(--desktop);
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .menu_wrap {
+    display: flex;
+    gap: 122px;
+  }
+
+  .second_wrap {
+    display: flex;
+    gap: 34px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .wrap {
+    flex-direction: row;
+    justify-content: space-between;
+    margin-bottom: 60px;
+  }
 }
 
 .logo_wrap {
@@ -20,6 +59,21 @@
     color: var(--background);
     font-weight: 600;
     line-height: 19.5px;
+  }
+
+  @media (min-width: 768px) {
+    margin: 0;
+    align-self: flex-start;
+
+    & svg {
+      width: 68px;
+      height: 56px;
+    }
+
+    & span {
+      font-size: var(--fs_large);
+      line-height: 29.26px;
+    }
   }
 }
 
@@ -46,6 +100,19 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+
+    & li {
+      margin-bottom: 16px;
+      height: 19px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
@@ -75,6 +142,10 @@
       }
     }
   }
+
+  @media (min-width: 768px) {
+    display: none;
+  }
 }
 
 .lang_wrap {
@@ -91,6 +162,13 @@
     line-height: 19.5px;
     color: #858d9f;
   }
+
+  @media (min-width: 768px) {
+    padding-top: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
 }
 
 .button_wrap {
@@ -98,5 +176,41 @@
 
   & a {
     margin: 0;
+    max-width: 300px !important;
+  }
+
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    width: 240px !important;
+  }
+}
+
+.social_desk {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  height: 32px;
+
+  & li {
+    height: 32px;
+
+    & a {
+      height: 32px;
+
+      & svg {
+        fill: #858d9f;
+        transition: fill 0.3s ease;
+        width: 32px;
+        height: 32px;
+      }
+
+      & svg:hover {
+        fill: var(--background);
+      }
+    }
+  }
+
+  @media (max-width: 767px) {
+    display: none;
   }
 }

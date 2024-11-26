@@ -7,7 +7,7 @@ export default function Advantages() {
   const t = useTranslations();
 
   return (
-    <section className={styles.advantages}>
+    <section id="about" className={styles.advantages}>
       <h1 className={styles.header}>{t('Advantages.header')}</h1>
 
       <ul className={styles.list}>

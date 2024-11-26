@@ -28,22 +28,23 @@ export default function Form() {
   return (
     <section className={styles.form}>
       <div className={styles.container}>
-        <div className={styles.top_wrap}>
-          <Icon name="icon-logoForm" width={48} height={39} />
-          <p>{t('Form.headerText')}</p>
+        <div className={styles.wrap}>
+          <div className={styles.top_wrap}>
+            <Icon name="icon-logoForm" width={48} height={39} />
+            <p>{t('Form.headerText')}</p>
+          </div>
+          <div className={styles.header_wrap}>
+            <h1 className={styles.header}>{t('Form.header')}</h1>
+            <Image
+              src={logoBack}
+              width={0}
+              height={0}
+              sizes="100vw"
+              alt="Form icon"
+              priority
+            />
+          </div>
         </div>
-        <div className={styles.header_wrap}>
-          <h1 className={styles.header}>{t('Form.header')}</h1>
-          <Image
-            src={logoBack}
-            width={0}
-            height={0}
-            sizes="100vw"
-            alt="Form icon"
-            priority
-          />
-        </div>
-
         <form className={styles.form_wrap} onSubmit={handleSubmit}>
           <label className={styles.label}>
             {t('Form.form.name')}
