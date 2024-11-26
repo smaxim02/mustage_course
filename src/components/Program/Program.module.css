@@ -2,6 +2,11 @@
   width: var(--container);
   margin: 0 auto;
   padding-bottom: 80px;
+
+  @media (min-width: 1408px) {
+    padding-bottom: 120px;
+    max-width: var(--desktop);
+  }
 }
 
 .header {
@@ -27,6 +32,45 @@
     background-size: 100% 100%;
     pointer-events: none;
     z-index: -1;
+  }
+
+  @media (min-width: 768px) {
+    font-size: var(--fs_mxlarge);
+    margin-bottom: 60px;
+    line-height: 1.1;
+
+    & span::before {
+      bottom: -28px;
+      left: -16px;
+      width: 200px;
+      height: 70px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    font-size: var(--fs_xxlarge);
+    margin-bottom: 80px;
+
+    & span::before {
+      background: url('../../img/program/decor.svg') no-repeat;
+      background-size: 100% 100%;
+      bottom: -41px;
+      left: -29px;
+      width: 338px;
+      height: 100px;
+    }
+  }
+
+  @media (min-width: 1408px) {
+    font-size: var(--fs_xxxlarge);
+    max-width: 1295px;
+
+    & span::before {
+      bottom: -41px;
+      left: -29px;
+      width: 362px;
+      height: 111px;
+    }
   }
 }
 
@@ -58,7 +102,7 @@
     & button {
       position: absolute;
       right: 0;
-      bottom: 0px;
+      bottom: 24px;
       width: 80px;
       height: 48px;
       display: flex;
@@ -85,34 +129,77 @@
       }
     }
   }
+
+  @media (min-width: 1024px) {
+    & li {
+      border-radius: 40px;
+      padding: 40px 32px;
+      margin-bottom: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      & h3 {
+        font-size: var(--fs_xlarge);
+        line-height: 1.1;
+        margin-bottom: 0;
+      }
+
+      & h4 {
+        font-size: var(--fs_xlarge);
+        line-height: 1.2;
+        max-width: 620px;
+      }
+
+      & button {
+        position: static;
+        width: 72px;
+        height: 56px;
+        flex-shrink: 0;
+      }
+
+      & svg {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
+
+.main_wrap {
+  @media (min-width: 1024px) {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+  }
 }
 
 .button_wrap {
   position: relative;
-  padding-bottom: 72px;
-  margin-bottom: 24px;
+  padding-bottom: 96px;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .block_wrap {
   margin-bottom: 16px;
 
-  & div {
+  & > div {
     background-color: #e9ebff;
     border-radius: 12px;
     padding: 8px;
     gap: 6px;
     display: inline-flex;
     align-items: center;
-    margin-right: 20px;
     margin-bottom: 8px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-
-    &:first-child {
-      margin-right: 0;
-    }
 
     & p {
       font-size: var(--fs_small);
@@ -123,10 +210,58 @@
       }
     }
   }
-}
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  & > :nth-child(2) {
+    margin-right: 40px;
+  }
+
+  @media (min-width: 360px) {
+    width: 300px;
+  }
+
+  @media (min-width: 1024px) {
+    margin-bottom: 0;
+    width: 388px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-right: 8px;
+
+    & > :nth-child(1) {
+      flex: 1 auto;
+    }
+
+    & > :nth-child(2) {
+      width: 250px;
+      margin-right: 0px;
+    }
+
+    & > :nth-child(3) {
+      flex: 1 auto;
+    }
+
+    & > div {
+      border-radius: 16px;
+      padding: 8px 14px 8px 16px;
+      gap: 12px;
+      display: flex;
+      align-items: center;
+      margin: 0;
+
+      & p {
+        font-size: var(--fs_xsmall);
+        line-height: 1.1;
+      }
+    }
+  }
+}
 .drop_box {
   overflow: hidden;
+  display: none;
   height: 0;
   transform: scaleY(0);
   transform-origin: top;
@@ -142,10 +277,6 @@
 
     &:last-child {
       margin-bottom: 0;
-
-      & p {
-        font-weight: 700;
-      }
     }
 
     & div {
@@ -171,4 +302,39 @@
   height: auto;
   transform: scaleY(1);
   padding-bottom: 24px;
+  display: block;
+
+  @media (min-width: 1024px) {
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+    padding-left: 42%;
+    margin-top: 32px;
+
+    & li {
+      padding: 24px 32px;
+      margin-bottom: 10px;
+      display: inline-flex;
+      gap: 16px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      & div {
+        display: flex;
+        gap: 16px;
+        flex-shrink: 0;
+
+        & span {
+          margin-top: 3px;
+          font-size: var(--fs_medium);
+        }
+      }
+
+      & p {
+        font-size: var(--fs_medium);
+      }
+    }
+  }
 }

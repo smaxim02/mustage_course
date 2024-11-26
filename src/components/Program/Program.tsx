@@ -21,49 +21,51 @@ export default function Program() {
     <section className={styles.program}>
       <h1 className={styles.header}>
         {t('Program.header.first')} &nbsp;
-        <span> {t('Program.header.second')}</span>
+        <span> {t('Program.header.second')}</span> &nbsp;
         {t('Program.header.third')}
       </h1>
 
       <ul className={styles.list}>
         {programItems.map((item, index) => (
           <li key={index}>
-            <h3>{t(item.itemsHeader)}</h3>
-            <div className={styles.block_wrap}>
-              <div>
-                <Icon name="icon-video" width={16} height={16} />
-                <p>
-                  <span> {t(item.time.first)}</span> {t(item.time.second)}
-                  <span> {t(item.time.third)}</span>
-                  {t(item.time.fourth)}
-                </p>
+            <div className={styles.main_wrap}>
+              <h3>{t(item.itemsHeader)}</h3>
+              <div className={styles.block_wrap}>
+                <div>
+                  <Icon name="icon-video" width={16} height={16} />
+                  <p>
+                    <span> {t(item.time.first)}</span> {t(item.time.second)}
+                    <span> {t(item.time.third)}</span>
+                    {t(item.time.fourth)}
+                  </p>
+                </div>
+                <div>
+                  <Icon name="icon-dock" width={16} height={16} />
+                  <p>
+                    <span>{t(item.quests.first)}</span>
+                    {t(item.quests.second)}
+                  </p>
+                </div>
+                <div>
+                  <Icon name="icon-edit" width={16} height={16} />
+                  <p>
+                    <span>{t(item.tests.first)}</span>
+                    {t(item.tests.second)}
+                  </p>
+                </div>
               </div>
-              <div>
-                <Icon name="icon-dock" width={16} height={16} />
-                <p>
-                  <span>{t(item.quests.first)}</span>
-                  {t(item.quests.second)}
-                </p>
+              <div className={styles.button_wrap}>
+                <h4>{t(item.itemsText)}</h4>
+                <button
+                  type="button"
+                  className={
+                    openIndices.includes(index) ? `${styles.active}` : ''
+                  }
+                  onClick={() => toggleDropdown(index)}
+                >
+                  <Icon name="icon-angle-down" width={16} height={16} />
+                </button>
               </div>
-              <div>
-                <Icon name="icon-edit" width={16} height={16} />
-                <p>
-                  <span>{t(item.tests.first)}</span>
-                  {t(item.tests.second)}
-                </p>
-              </div>
-            </div>
-            <div className={styles.button_wrap}>
-              <h4>{t(item.itemsText)}</h4>
-              <button
-                type="button"
-                className={
-                  openIndices.includes(index) ? `${styles.active}` : ''
-                }
-                onClick={() => toggleDropdown(index)}
-              >
-                <Icon name="icon-angle-down" width={16} height={16} />
-              </button>
             </div>
             <ul
               className={`${styles.drop_box} ${

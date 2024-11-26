@@ -2,6 +2,11 @@
   width: var(--container);
   margin: 0 auto;
   padding-bottom: 80px;
+
+  @media (min-width: 1408px) {
+    padding-bottom: 120px;
+    max-width: var(--desktop);
+  }
 }
 
 .header {
@@ -9,7 +14,22 @@
   font-size: var(--fs_xlarge);
   font-weight: 700;
   margin-bottom: 40px;
-  line-height: 35.2px;
+  line-height: 1.1;
+
+  @media (min-width: 768px) {
+    font-size: var(--fs_mxlarge);
+    margin-bottom: 60px;
+  }
+
+  @media (min-width: 1024px) {
+    font-size: var(--fs_xxlarge);
+    margin-bottom: 80px;
+  }
+
+  @media (min-width: 1408px) {
+    font-size: var(--fs_xxxlarge);
+    max-width: 1295px;
+  }
 }
 
 .wrap {
@@ -33,9 +53,68 @@
     font-weight: 600;
     line-height: 28.8px;
     margin-bottom: 24px;
+
+    @media (min-width: 768px) {
+      max-width: 550px;
+      line-height: 1.2;
+      font-size: var(--fs_xlarge);
+    }
   }
 
-  & p span {
-    font-weight: 800;
+  & p {
+    & span {
+      font-weight: 800;
+    }
+
+    @media (min-width: 768px) {
+      max-width: 695px;
+      line-height: 27px;
+      font-size: var(--fs_medium);
+    }
+
+    @media (min-width: 1024px) {
+      max-width: 55%;
+    }
+  }
+
+  @media (min-width: 420px) {
+    background-position: bottom 21px center, bottom 21px center, bottom center,
+      bottom center;
+    background-size: 280px 230px, 400px 170px, 100% 100%, 100% 100%;
+  }
+
+  @media (min-width: 768px) {
+    padding: 24px 32px 300px;
+    background-size: 350px 300px, 400px 170px, 100% 100%, 100% 100%;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 82px 80px;
+    background-image: url('../../img/easyMoney/back.webp'),
+      url('../../img/easyMoney/line.svg'),
+      radial-gradient(
+        23.83% 69.31% at 78.16% 50%,
+        rgba(63, 168, 168, 0.4) 0%,
+        rgba(216, 242, 242, 0) 100%
+      ),
+      linear-gradient(0deg, #d8f2f2, #d8f2f2);
+    background-repeat: no-repeat;
+    background-position: bottom 65px right 78px, bottom -56px right 5px,
+      bottom center, bottom center;
+    background-size: 34% 60%, 55% 67%, 100% 100%, 100% 100%;
+  }
+
+  @media (min-width: 1240px) {
+    padding: 82px 80px;
+
+    background-position: bottom 41px right 78px, bottom -56px right 5px,
+      bottom center, bottom center;
+    background-size: 34% 70%, 55% 67%, 100% 100%, 100% 100%;
+  }
+
+  @media (min-width: 1408px) {
+    background-position: bottom 41px right 78px, bottom -56px right 5px,
+      bottom center, bottom center;
+    background-size: 34% 83%, 55% 67%, 100% 100%, 100% 100%;
   }
 }

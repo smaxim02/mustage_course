@@ -82,9 +82,6 @@
     border-radius: 40px;
     margin-bottom: 0;
   }
-
-  @media (min-width: 1408px) {
-  }
 }
 
 .list_header {
@@ -164,12 +161,6 @@
       height: 16px;
     }
   }
-
-  @media (min-width: 1024px) {
-  }
-
-  @media (min-width: 1408px) {
-  }
 }
 
 .stat_wrap {
@@ -218,12 +209,6 @@
         line-height: 24px;
       }
     }
-  }
-
-  @media (min-width: 1024px) {
-  }
-
-  @media (min-width: 1408px) {
   }
 }
 
@@ -274,12 +259,6 @@
         line-height: 27px;
       }
     }
-  }
-
-  @media (min-width: 1024px) {
-  }
-
-  @media (min-width: 1408px) {
   }
 }
 
@@ -361,27 +340,15 @@
 }
 
 .wrap {
-  @media (min-width: 768px) {
-  }
-
   @media (min-width: 1024px) {
     display: flex;
     gap: 16px;
     margin-bottom: 40px;
   }
-
-  @media (min-width: 1408px) {
-  }
 }
 
 .second_wrap {
-  @media (min-width: 768px) {
-  }
-
   @media (min-width: 1024px) {
     flex: 1;
-  }
-
-  @media (min-width: 1408px) {
   }
 }
