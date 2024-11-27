@@ -54,6 +54,14 @@
   gap: 8px;
   align-items: center;
   margin-bottom: 40px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0px 2px 5px #1c16631a)
+      drop-shadow(0px 9px 20px #1c16631f) drop-shadow(0px 16px 20px #1c16630d)
+      drop-shadow(0px 37px 15px #1c166303) drop-shadow(0px 57px 16px #1c166300);
+    transform: scale(1.05);
+  }
 
   & span {
     color: var(--background);
@@ -100,6 +108,16 @@
 
     &:last-child {
       margin-bottom: 0;
+    }
+
+    transition: transform 0.3s ease, filter 0.3s ease;
+
+    &:hover {
+      filter: drop-shadow(0px 2px 5px #1c16631a)
+        drop-shadow(0px 9px 20px #1c16631f) drop-shadow(0px 16px 20px #1c16630d)
+        drop-shadow(0px 37px 15px #1c166303)
+        drop-shadow(0px 57px 16px #1c166300);
+      transform: scale(1.05);
     }
   }
 
@@ -161,6 +179,12 @@
     font-weight: 500;
     line-height: 19.5px;
     color: #858d9f;
+
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: var(--background);
+    }
   }
 
   @media (min-width: 768px) {

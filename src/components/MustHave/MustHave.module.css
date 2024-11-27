@@ -43,6 +43,11 @@
   border-radius: 40px;
   background-color: #d8f2f2;
   margin-bottom: 16px;
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0px 20px 40px #65709f26);
+  }
 
   @media (min-width: 768px) {
     flex: 1;
@@ -98,6 +103,15 @@
   & img {
     width: 32px;
     height: 38px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+
+    &:hover {
+      filter: drop-shadow(0px 2px 5px #1c16631a)
+        drop-shadow(0px 9px 20px #1c16631f) drop-shadow(0px 16px 20px #1c16630d)
+        drop-shadow(0px 37px 15px #1c166303)
+        drop-shadow(0px 57px 16px #1c166300);
+      transform: scale(1.05);
+    }
   }
 
   @media (min-width: 1024px) {
@@ -194,6 +208,14 @@
   position: absolute;
   right: 0;
   bottom: 0;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0px 2px 5px #1c16631a)
+      drop-shadow(0px 9px 20px #1c16631f) drop-shadow(0px 16px 20px #1c16630d)
+      drop-shadow(0px 37px 15px #1c166303) drop-shadow(0px 57px 16px #1c166300);
+    transform: scale(1.05);
+  }
 
   @media (min-width: 768px) {
     width: 200px;
@@ -216,6 +238,11 @@
   padding: 24px 24px 184px;
   border-radius: 40px;
   background-color: var(--main_text_color);
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0px 20px 40px #65709f26);
+  }
 
   @media (min-width: 768px) {
     flex: 1;

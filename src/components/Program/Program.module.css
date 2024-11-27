@@ -110,11 +110,12 @@
       align-items: center;
       border-radius: 100px;
       background-color: var(--main_color);
-      transition: box-shadow 0.3s ease;
+      transition: background-color 0.3s ease;
+      box-shadow: 0px 16px 40px #d9504366;
 
       &:hover,
       &:focus {
-        box-shadow: 0px 16px 40px #d9504366;
+        background-color: #bf392d;
       }
 
       & svg {

@@ -57,20 +57,18 @@
       gap: 4px;
 
       & li {
-        border-radius: 16px;
-        padding: 8px 12px;
-        transition: background-color 0.3s ease;
         & a {
-          transition: color 0.3s ease;
+          border-radius: 16px;
+          padding: 8px 12px;
+          transition: background-color 0.3s ease;
           line-height: 19.5px;
         }
       }
 
-      & li:hover,
-      & li:focus {
-        background-color: var(--background);
-
-        & a {
+      & li {
+        & a:hover,
+        & a:focus {
+          background-color: var(--background);
           font-weight: 600;
           color: var(--second_color);
         }
@@ -80,7 +78,7 @@
   @media (min-width: 1408px) {
     & ul {
       gap: 8px;
-      & li {
+      & li a {
         border-radius: 16px;
         padding: 18px 24px;
       }
@@ -112,6 +110,15 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+
+  &:hover,
+  &:focus {
+    filter: drop-shadow(0px 2px 5px #1c16631a)
+      drop-shadow(0px 9px 20px #1c16631f) drop-shadow(0px 16px 20px #1c16630d)
+      drop-shadow(0px 37px 15px #1c166303) drop-shadow(0px 57px 16px #1c166300);
+    transform: scale(1.05);
+  }
 
   @media (min-width: 1024px) {
     & svg {
