@@ -10,7 +10,15 @@ import Image from 'next/image';
 export default function Form() {
   const t = useTranslations();
 
+  const nicknameRegex = /^@([a-zA-Z0-9_]{3,32})$/;
+
   const [formData, setFormData] = useState({
+    name: '',
+    phone: '',
+    nickname: '',
+  });
+
+  const [errors, setErrors] = useState({
     name: '',
     phone: '',
     nickname: '',
@@ -19,12 +27,50 @@ export default function Form() {
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
+
+    // Reset error when user starts typing
+    setErrors({ ...errors, [name]: '' });
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors = { name: '', phone: '', nickname: '' };
+    let isValid = true;
+
+    if (!formData.name) {
+      newErrors.name = t('Form.errors.nameRequired');
+      isValid = false;
+    } else if (formData.name.length > 100) {
+      newErrors.name = t('Form.errors.nameLength');
+      isValid = false;
+    }
+
+    if (!formData.phone) {
+      newErrors.phone = t('Form.errors.phoneRequired');
+      isValid = false;
+    } else if (!/^\d{9}$/.test(formData.phone)) {
+      newErrors.phone = t('Form.errors.phoneFormat');
+      isValid = false;
+    }
+
+    if (!formData.nickname) {
+      newErrors.nickname = t('Form.errors.nickRequired');
+      isValid = false;
+    } else if (!nicknameRegex.test(formData.nickname)) {
+      newErrors.nickname = t('Form.errors.nickFormat');
+      isValid = false;
+    }
+
+    setErrors(newErrors);
+    return isValid;
   };
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+    if (validateForm()) {
+      console.log('Form submitted:', formData);
+    }
   };
+
   return (
     <section className={styles.form}>
       <div className={styles.container}>
@@ -54,9 +100,10 @@ export default function Form() {
               value={formData.name}
               onChange={handleChange}
               placeholder={t('Form.form.namePlaceHolder')}
-              className={styles.input}
+              className={`${styles.input} ${errors.name ? styles.error : ''}`}
               required
             />
+            {errors.name && <p className={styles.errorText}>{errors.name}</p>}
           </label>
 
           <label className={styles.label}>
@@ -71,10 +118,13 @@ export default function Form() {
                 value={formData.phone}
                 onChange={handleChange}
                 placeholder="0993483455"
-                className={styles.input}
+                className={`${styles.input} ${
+                  errors.phone ? styles.error : ''
+                }`}
                 required
               />
             </div>
+            {errors.phone && <p className={styles.errorText}>{errors.phone}</p>}
           </label>
 
           <label className={styles.label}>
@@ -85,9 +135,14 @@ export default function Form() {
               value={formData.nickname}
               onChange={handleChange}
               placeholder="@nickname"
-              className={styles.input}
+              className={`${styles.input} ${
+                errors.nickname ? styles.error : ''
+              }`}
               required
             />
+            {errors.nickname && (
+              <p className={styles.errorText}>{errors.nickname}</p>
+            )}
           </label>
 
           <button className={styles.button} type="submit">

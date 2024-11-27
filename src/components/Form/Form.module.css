@@ -158,7 +158,7 @@
     font-size: var(--fs_small);
     line-height: 17.07px;
 
-    & input {
+    & .input {
       margin-top: 8px;
       padding: 14px 12px;
       border-radius: 16px;
@@ -166,14 +166,35 @@
       border: none;
       width: 100%;
       height: 48px;
+      transition: all 0.3s ease;
     }
 
-    & input::placeholder {
+    & .input::placeholder {
       color: #858d9f;
       font-size: var(--fs_xsmall);
       font-weight: 300;
       line-height: 19.5px;
       font-family: var(--font_mons);
+    }
+
+    & .input:focus {
+      border: 1px solid #575ff2;
+      background-color: #e9ebff;
+      outline: none;
+    }
+
+    & .error {
+      border: 1px solid #d95043;
+      background-color: #ffe0de;
+      outline: none;
+    }
+
+    & .errorText {
+      font-size: var(--fs_small);
+      font-weight: 300;
+      line-height: 17.07px;
+      margin-top: 5px;
+      color: #fd7542;
     }
 
     & .phone_wrap {
@@ -211,6 +232,14 @@
 
   @media (min-width: 1024px) {
     width: 48%;
+  }
+
+  &:focus {
+    & .phone_label {
+      border: 1px solid #575ff2;
+      background-color: #e9ebff;
+      outline: none;
+    }
   }
 }
 
