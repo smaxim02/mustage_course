@@ -266,7 +266,6 @@
 }
 .drop_box {
   overflow: hidden;
-  display: none;
   height: 0;
   transform: scaleY(0);
   transform-origin: top;
@@ -307,7 +306,6 @@
   height: auto;
   transform: scaleY(1);
   padding-bottom: 24px;
-  display: block;
 
   @media (min-width: 1024px) {
     display: flex;
