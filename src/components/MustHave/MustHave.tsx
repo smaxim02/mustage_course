@@ -11,10 +11,10 @@ export default function MustHave() {
 
   return (
     <section className={styles.mustHave}>
-      <h1 className={styles.header}>
+      <h2 className={styles.header}>
         {t('MustHave.header.first')} <span>{t('MustHave.header.second')}</span>
         {t('MustHave.header.third')}
-      </h1>
+      </h2>
       <div className={styles.wrap}>
         <div className={styles.list_wrap}>
           <div className={styles.header_wrap}>
@@ -34,7 +34,12 @@ export default function MustHave() {
             {mustHaveItems.map((item, index) => (
               <li key={index}>
                 <div className={styles.icon_wrap}>
-                  <Icon name="icon-check" width={12} height={9} />
+                  <Icon
+                    name="icon-check"
+                    width={12}
+                    height={9}
+                    color="#3fa8a8"
+                  />
                 </div>
                 <p>{t(item)}</p>
               </li>

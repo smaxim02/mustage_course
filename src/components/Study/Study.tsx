@@ -8,14 +8,14 @@ export default function Study() {
 
   return (
     <section className={styles.study}>
-      <h1 className={styles.header}>
+      <h2 className={styles.header}>
         {t('Study.header.first')}{' '}
         <span>
           {t('Study.header.second')}
           <br />
         </span>
         {t('Study.header.third')}
-      </h1>
+      </h2>
 
       <ul className={styles.list}>
         {studyItems.map((item, index) => (

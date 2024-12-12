@@ -276,6 +276,60 @@ export const startInfo = [
   },
 ];
 
+export const tariffsItems = [
+  {
+    header: 'Tariffs.item.first.header',
+    price: 'Tariffs.item.first.price',
+    list: {
+      first: 'Tariffs.item.first.list.first',
+      second: 'Tariffs.item.first.list.second',
+      third: 'Tariffs.item.first.list.third',
+      fourth: 'Tariffs.item.first.list.fourth',
+    },
+  },
+  {
+    header: 'Tariffs.item.second.header',
+    price: 'Tariffs.item.second.price',
+    list: {
+      first: 'Tariffs.item.second.list.first',
+      second: 'Tariffs.item.second.list.second',
+      third: 'Tariffs.item.second.list.third',
+      fourth: 'Tariffs.item.second.list.fourth',
+      fifth: 'Tariffs.item.second.list.fifth',
+      sixth: 'Tariffs.item.second.list.sixth',
+    },
+  },
+  {
+    header: 'Tariffs.item.third.header',
+    price: 'Tariffs.item.third.price',
+    list: {
+      first: 'Tariffs.item.third.list.first',
+      second: 'Tariffs.item.third.list.second',
+      third: 'Tariffs.item.third.list.third',
+      fourth: 'Tariffs.item.third.list.fourth',
+      fifth: 'Tariffs.item.third.list.fifth',
+    },
+  },
+  {
+    header: 'Tariffs.item.fourth.header',
+    price: 'Tariffs.item.fourth.price',
+    list: {
+      first: 'Tariffs.item.fourth.list.first',
+      second: 'Tariffs.item.fourth.list.second',
+      third: 'Tariffs.item.fourth.list.third',
+      fourth: 'Tariffs.item.fourth.list.fourth',
+    },
+  },
+];
+
+export const tariffsBanks = [
+  'icon-privat',
+  'icon-mono',
+  'icon-a',
+  'icon-credi',
+  'icon-bank',
+];
+
 export const studyItems = [
   {
     header: 'Study.itemsHeader.first',

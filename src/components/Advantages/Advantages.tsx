@@ -8,7 +8,7 @@ export default function Advantages() {
 
   return (
     <section id="about" className={styles.advantages}>
-      <h1 className={styles.header}>{t('Advantages.header')}</h1>
+      <h2 className={styles.header}>{t('Advantages.header')}</h2>
 
       <ul className={styles.list}>
         {advantagesItems.map((item, index) => (

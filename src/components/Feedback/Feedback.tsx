@@ -10,10 +10,10 @@ export default function Feedback() {
     <section id="feedback" className={styles.feedback}>
       <div className={styles.container}>
         <div className={styles.header_wrap}>
-          <h1 className={styles.header}>
+          <h2 className={styles.header}>
             {t('Feedback.header.first')}
             <span>{t('Feedback.header.second')}</span>
-          </h1>
+          </h2>
         </div>
         <div className={styles.list_wrap}>
           <ul className={styles.list}>

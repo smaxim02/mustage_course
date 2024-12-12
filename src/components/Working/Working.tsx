@@ -11,7 +11,7 @@ export default function Working() {
   return (
     <section className={styles.working}>
       <div className={styles.container}>
-        <h1 className={styles.header}>{t('Working.header')}</h1>
+        <h2 className={styles.header}>{t('Working.header')}</h2>
         <ul className={styles.list}>
           {workingItems.map((item, index) => (
             <li key={index}>

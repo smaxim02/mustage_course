@@ -6,7 +6,7 @@ export default function EasyMoney() {
 
   return (
     <section className={styles.easyMoney}>
-      <h1 className={styles.header}>{t('EasyMoney.header')}</h1>
+      <h2 className={styles.header}>{t('EasyMoney.header')}</h2>
 
       <div className={styles.wrap}>
         <h2> {t('EasyMoney.blockHeader')}</h2>

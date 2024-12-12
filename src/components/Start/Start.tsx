@@ -12,10 +12,10 @@ export default function Start() {
 
   return (
     <section id="possibility" className={styles.start}>
-      <h1 className={styles.header}>
+      <h2 className={styles.header}>
         {t('Start.header.first')} <span>{t('Start.header.second')}</span>
         {t('Start.header.third')}
-      </h1>
+      </h2>
       <div className={styles.wrap}>
         <div className={styles.list_wrap}>
           <h2 className={styles.list_header}>{t('Start.itemsHeader')}</h2>

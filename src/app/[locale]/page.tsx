@@ -10,6 +10,7 @@ import MustHave from '@/components/MustHave/MustHave';
 import Program from '@/components/Program/Program';
 import Start from '@/components/Start/Start';
 import Study from '@/components/Study/Study';
+import Tariffs from '@/components/Tariffs/Tariffs';
 import Working from '@/components/Working/Working';
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
       <EasyMoney />
       <Study />
       <Program />
+      <Tariffs />
       <Feedback />
       <Answers />
       <Form />

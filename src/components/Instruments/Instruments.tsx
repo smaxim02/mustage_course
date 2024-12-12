@@ -8,7 +8,7 @@ export default function Instruments() {
 
   return (
     <section id="instruments" className={styles.instruments}>
-      <h1 className={styles.header}>{t('Instruments.header')}</h1>
+      <h2 className={styles.header}>{t('Instruments.header')}</h2>
       <ul className={styles.list}>
         {instrumentsItems.map((item, index) => (
           <li key={index}>

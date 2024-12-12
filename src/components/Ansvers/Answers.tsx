@@ -19,7 +19,7 @@ export default function Answers() {
 
   return (
     <section id="faq" className={styles.answers}>
-      <h1 className={styles.header}>{t('Answers.header')}</h1>
+      <h2 className={styles.header}>{t('Answers.header')}</h2>
 
       <ul className={styles.list}>
         {answersItems.map((item, index) => (

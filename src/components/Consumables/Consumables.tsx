@@ -21,7 +21,7 @@ export default function Consumables() {
           alt="Folder icon"
           priority
         />
-        <h1 className={styles.header}>{t('Consumables.header')}</h1>
+        <h2 className={styles.header}>{t('Consumables.header')}</h2>
 
         <ul className={styles.list}>
           {consumablesItems.map((item, index) => (
