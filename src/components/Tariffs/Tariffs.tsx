@@ -9,19 +9,21 @@ export default function Tariffs() {
 
   return (
     <section id="tariffs" className={styles.tariffs}>
-      <h2 className={styles.header}>{t('Tariffs.header')}</h2>
+      <h2 className={styles.tariffsHeader}>{t('Tariffs.header')}</h2>
 
-      <ul className={styles.list}>
+      <ul className={styles.tariffsList}>
         {tariffsItems.map((item, index) => (
-          <li key={index}>
-            <h3>{t(item.header)}</h3>
-            <span>{t(item.price)}</span>
+          <li key={index} className={styles.tariffsListItem}>
+            <div className={styles.tariffsListItemHeaderWrap}>
+              <h3 className={styles.tariffsListItemHeader}>{t(item.header)}</h3>
+            </div>
+            <span className={styles.tariffsListItemPrice}>{t(item.price)}</span>
 
-            <ul className={styles.subList}>
+            <ul className={styles.tariffsSubList}>
               {Object.entries(item.list).map(([key, value]) =>
                 value ? (
-                  <li className={styles.listItem} key={key}>
-                    <div className={styles.icon_wrap}>
+                  <li className={styles.tariffsSubListItem} key={key}>
+                    <div className={styles.tariffsSubListItemIconWrap}>
                       <Icon
                         name="icon-check"
                         width={12}
@@ -30,12 +32,12 @@ export default function Tariffs() {
                       />
                     </div>
 
-                    <p>{t(value)}</p>
+                    <p className={styles.tariffsSubListItemText}>{t(value)}</p>
                   </li>
                 ) : null
               )}
             </ul>
-            <div className={styles.button_wrap}>
+            <div className={styles.tariffsButtonWrap}>
               <Button
                 width="100%"
                 link={t('Main.buttonLink')}
@@ -46,15 +48,17 @@ export default function Tariffs() {
           </li>
         ))}
       </ul>
-      <div className={styles.bankWrap}>
-        <div className={styles.moneyBox}></div>
-        <p>
+      <div className={styles.tariffsBankWrap}>
+        <div className={styles.tariffsMoneyBox}></div>
+        <p className={styles.tariffsBankText}>
           {t('Tariffs.bank.first')}
-          <span>{t('Tariffs.bank.second')}</span>
+          <span className={styles.tariffsBankHighlight}>
+            {t('Tariffs.bank.second')}
+          </span>
         </p>
-        <ul className={styles.bankList}>
+        <ul className={styles.tariffsBankList}>
           {tariffsBanks.map((item, index) => (
-            <li key={index}>
+            <li key={index} className={styles.tariffsBankListItem}>
               <Icon name={item} width={48} height={48} />
             </li>
           ))}
