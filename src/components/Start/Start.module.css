@@ -184,7 +184,7 @@
 
   & div {
     flex: 1;
-    padding: 24px;
+    padding: 18px;
     color: var(--background);
     background-color: var(--main_text_color);
     border-radius: 32px;
@@ -208,6 +208,9 @@
       font-size: var(--fs_small);
       font-weight: 600;
       line-height: 21px;
+    }
+    @media (min-width: 350px) {
+      padding: 24px;
     }
   }
 

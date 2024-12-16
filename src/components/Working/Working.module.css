@@ -252,7 +252,7 @@
     border-radius: 40px;
     & p {
       flex-shrink: 0;
-      font-size: var(--fs_xlarge);
+      font-size: 28px;
       line-height: 48px;
       text-align: left;
     }
@@ -260,13 +260,25 @@
 
   @media (min-width: 1024px) {
     flex-wrap: wrap;
-    justify-content: center;
   }
 
   @media (min-width: 1408px) {
+    padding: 11px;
+    & p {
+      font-size: var(--fs_xlarge);
+    }
+  }
+
+  @media (min-width: 1480px) {
     flex-wrap: nowrap;
+    & a {
+      margin: 0;
+      width: 54% !important;
+    }
+  }
+
+  @media (min-width: 1550px) {
     padding: 16px 24px 16px 41px;
-    gap: 40px;
   }
 }
 
