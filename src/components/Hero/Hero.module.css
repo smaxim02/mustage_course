@@ -184,6 +184,7 @@
     padding: 24px;
     background-color: var(--main_text_color);
     border-radius: 32px;
+    overflow: hidden;
   }
 
   & img {

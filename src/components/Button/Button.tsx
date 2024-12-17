@@ -20,8 +20,8 @@ const Button: React.FC<ButtonProps> = ({
     <a
       className={`${styles.button} ${!showArrow ? styles.noArrow : ''}`}
       href={link}
-      target="_blank"
-      rel="noopener noreferrer"
+      // target="_blank"
+      // rel="noopener noreferrer"
       style={{ height, width }}
     >
       {text}

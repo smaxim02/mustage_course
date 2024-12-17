@@ -20,14 +20,14 @@ export default function Hero() {
           <Button
             width="76.5%"
             height="56px"
-            link={t('Main.buttonLink')}
+            link="https://t.me/mustage_academy_bot"
             text={t('Main.button')}
           />
         </div>
         <div className={styles.desk_button}>
           <Button
             width="233px"
-            link={t('Main.buttonLink')}
+            link="https://t.me/mustage_academy_bot"
             text={t('Main.buttonHero')}
             showArrow={false}
           />

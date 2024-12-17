@@ -2,15 +2,24 @@
 
 import Icon from '@/helpers/Icon';
 import styles from './Form.module.css';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import logoBack from '../../img/form/logo.webp';
 import Image from 'next/image';
+import { sendMessage, sendToGoogleScript } from '@/api/sendData';
+import { toast } from 'react-toastify';
+import { useRouter } from 'next/navigation';
 
 export default function Form() {
   const t = useTranslations();
 
   const nicknameRegex = /^@([a-zA-Z0-9_]{3,32})$/;
+
+  const locale = useLocale();
+
+  const [isLoading, setIsLoading] = useState(false);
+
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -28,7 +37,6 @@ export default function Form() {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
 
-    // Reset error when user starts typing
     setErrors({ ...errors, [name]: '' });
   };
 
@@ -64,15 +72,41 @@ export default function Form() {
     return isValid;
   };
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
     if (validateForm()) {
-      console.log('Form submitted:', formData);
+      try {
+        const message = {
+          message: 'Користувач відправив форму',
+          name: formData.name,
+          username: formData.nickname,
+          phone: formData.phone,
+          bot: false,
+        };
+        setIsLoading(true);
+        await sendToGoogleScript(message);
+        await sendMessage(message);
+        toast.success(t('Form.form.ok'));
+        const currentQueryParams = new URLSearchParams(window.location.search);
+        const queryParams = currentQueryParams.toString();
+
+        if (queryParams) {
+          router.push(`/${locale}/confirm?${queryParams}`);
+        } else {
+          router.push(`/${locale}/confirm`);
+        }
+        setIsLoading(false);
+      } catch {
+        setIsLoading(false);
+        toast.error(t('Form.errors.sendError'));
+      }
+    } else {
+      toast.error(t('Form.errors.sendError'));
     }
   };
 
   return (
-    <section className={styles.form}>
+    <section id="form" className={styles.form}>
       <div className={styles.container}>
         <div className={styles.wrap}>
           <div className={styles.top_wrap}>
@@ -144,8 +178,13 @@ export default function Form() {
               <p className={styles.errorText}>{errors.nickname}</p>
             )}
           </label>
-
-          <button className={styles.button} type="submit">
+          <span
+            className={`${styles.loader} ${!isLoading ? styles.hidden : ''}`}
+          ></span>
+          <button
+            className={`${isLoading ? styles.hidden : styles.button}`}
+            type="submit"
+          >
             {t('Form.form.button')}
           </button>
         </form>

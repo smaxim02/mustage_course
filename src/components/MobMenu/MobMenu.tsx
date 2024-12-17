@@ -65,7 +65,7 @@ export default function MobMenu({
           <Button
             width="169px"
             height="56px"
-            link={t('Main.buttonLink')}
+            link="https://t.me/mustage_manager_support"
             text={t('Main.buttonFooter')}
             showArrow={false}
           />

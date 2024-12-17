@@ -1,9 +1,13 @@
 import type { Metadata } from 'next';
 import '../../styles/globals.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { Montserrat, Wix_Madefor_Display } from 'next/font/google';
 import Header from '@/components/Header/Header';
 import { getMessages } from 'next-intl/server';
+import { ToastContainer } from 'react-toastify';
+import { Suspense } from 'react';
+import { FacebookPixel } from '@/components/FacebookPixel/FacebookPixel';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -70,6 +74,10 @@ export default async function RootLayout({
         >
           <Header locale={locale} />
           {children}
+          <ToastContainer />
+          <Suspense fallback={null}>
+            <FacebookPixel locale={locale} />
+          </Suspense>
         </body>
       </NextIntlClientProvider>
     </html>
