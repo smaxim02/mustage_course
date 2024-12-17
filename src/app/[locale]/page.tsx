@@ -1,8 +1,10 @@
+import { useLocale } from 'next-intl';
 import Advantages from '@/components/Advantages/Advantages';
 import Answers from '@/components/Ansvers/Answers';
 import Consumables from '@/components/Consumables/Consumables';
 import EasyMoney from '@/components/EasyMoney/EasyMoney';
 import Feedback from '@/components/Feedback/Feedback';
+import Footer from '@/components/Footer/Footer';
 import Form from '@/components/Form/Form';
 import Hero from '@/components/Hero/Hero';
 import Instruments from '@/components/Instruments/Instruments';
@@ -14,22 +16,27 @@ import Tariffs from '@/components/Tariffs/Tariffs';
 import Working from '@/components/Working/Working';
 
 export default function Home() {
+  const locale = useLocale();
+
   return (
     <>
-      <Hero />
-      <Instruments />
-      <Working />
-      <MustHave />
-      <Advantages />
-      <Consumables />
-      <Start />
-      <EasyMoney />
-      <Study />
-      <Program />
-      <Tariffs />
-      <Feedback />
-      <Answers />
-      <Form />
+      <main>
+        <Hero />
+        <Instruments />
+        <Working />
+        <MustHave />
+        <Advantages />
+        <Consumables />
+        <Start />
+        <EasyMoney />
+        <Study />
+        <Program />
+        <Tariffs />
+        <Feedback />
+        <Answers />
+        <Form />
+      </main>
+      <Footer locale={locale} />
     </>
   );
 }

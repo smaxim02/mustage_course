@@ -7,6 +7,13 @@
     "buttonTariffs": "Придбати",
     "buttonLink": "/"
   },
+  "Confirm": {
+    "button": "На головну",
+    "buttonLink": "/",
+    "logo": "Mustage",
+    "header": "Дякуємо за залишену заявку!",
+    "text": "Очікуйте повідомлення від нашого менеджера"
+  },
   "Header": {
     "home": "MUSTAGE"
   },

@@ -3,7 +3,6 @@ import '../../styles/globals.css';
 import { NextIntlClientProvider } from 'next-intl';
 import { Montserrat, Wix_Madefor_Display } from 'next/font/google';
 import Header from '@/components/Header/Header';
-import Footer from '@/components/Footer/Footer';
 import { getMessages } from 'next-intl/server';
 
 const montserrat = Montserrat({
@@ -70,8 +69,7 @@ export default async function RootLayout({
           className={`${montserrat.variable} ${wixMadeforDisplay.variable}`}
         >
           <Header locale={locale} />
-          <main>{children}</main>
-          <Footer locale={locale} />
+          {children}
         </body>
       </NextIntlClientProvider>
     </html>

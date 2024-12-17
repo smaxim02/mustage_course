@@ -1,0 +1,112 @@
+.confirm {
+  width: var(--container);
+  margin: 0 auto;
+  padding-top: 112px;
+  height: 100vh;
+  min-height: 480px;
+  overflow-y: hidden;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 16px;
+
+  @media (min-width: 768px) {
+    padding-top: 140px;
+    min-height: 570px;
+  }
+
+  @media (min-width: 1440px) {
+    padding-top: 223px;
+    max-width: var(--desktop);
+  }
+}
+
+.logo_wrap {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 16px;
+  justify-content: center;
+
+  @media (min-width: 1024px) {
+    margin-bottom: 24px;
+    & svg {
+      width: 68px;
+      height: 56px;
+    }
+  }
+}
+
+.logo_text {
+  font-size: var(--fs_large);
+  font-weight: 700;
+  line-height: 1.22;
+
+  @media (min-width: 1024px) {
+    font-size: var(--fs_large);
+  }
+}
+
+.header {
+  font-family: var(--font_wix);
+  font-size: var(--fs_xlarge);
+  font-weight: 800;
+  line-height: 1.2;
+  text-align: center;
+
+  @media (min-width: 1408px) {
+    font-size: 56px;
+    line-height: 70.56px;
+  }
+}
+
+.text {
+  font-size: var(--fs_medium);
+  line-height: 22px;
+  margin-bottom: 24px;
+  text-align: center;
+
+  @media (min-width: 1024px) {
+    font-size: var(--fs_large);
+    line-height: 1.22;
+    margin-bottom: 45px;
+  }
+}
+
+.button_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (min-width: 1024px) {
+    & a {
+      padding: 0 32px;
+      width: 252px !important;
+    }
+  }
+}
+
+.background {
+  width: 100%;
+  max-width: 400px;
+  aspect-ratio: 363 / 329;
+  background-image: url('../../img/hero/mob_back.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top -15px center;
+  pointer-events: none;
+
+  @media (min-width: 1024px) {
+    z-index: -1;
+    width: 81%;
+    max-width: none;
+    background-position: top -50px left -55px;
+    aspect-ratio: 1400/932;
+    background-image: url('../../img/hero/back.webp');
+  }
+
+  @media (min-width: 1440px) {
+    background-position: top -75px left -78px;
+  }
+}
