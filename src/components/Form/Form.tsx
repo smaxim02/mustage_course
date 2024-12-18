@@ -135,13 +135,16 @@ export default function Form() {
             {errors.name && <p className={styles.errorText}>{errors.name}</p>}
           </label>
 
-          <label className={styles.label}>
-            {t('Form.form.phone')}
+          <div className={styles.labelWrapper}>
+            <label className={styles.label} htmlFor="phone">
+              {t('Form.form.phone')}
+            </label>
             <div className={styles.phone_wrap}>
               <div className={styles.phone_label}>
                 <span>+380</span>
               </div>
               <input
+                id="phone"
                 type="tel"
                 name="phone"
                 value={formData.phone}
@@ -154,7 +157,7 @@ export default function Form() {
               />
             </div>
             {errors.phone && <p className={styles.errorText}>{errors.phone}</p>}
-          </label>
+          </div>
 
           <label className={styles.label}>
             {t('Form.form.nick')}
