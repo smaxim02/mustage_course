@@ -20,6 +20,7 @@ export default function MobMenu({
   handleLanguageChange,
 }: MobMenuProps) {
   const t = useTranslations('');
+  const CHAT_URL = process.env.NEXT_PUBLIC_CHAT_URL || '';
 
   return (
     <div
@@ -65,7 +66,7 @@ export default function MobMenu({
           <Button
             width="169px"
             height="56px"
-            link={t('Main.chatLink')}
+            link={CHAT_URL}
             text={t('Main.buttonFooter')}
             showArrow={false}
           />

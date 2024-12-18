@@ -8,6 +8,7 @@ import Image from 'next/image';
 
 export default function Consumables() {
   const t = useTranslations();
+  const BOT_URL = process.env.NEXT_PUBLIC_BOT_URL || '';
 
   return (
     <section className={styles.consumables}>
@@ -41,7 +42,7 @@ export default function Consumables() {
         <div className={styles.button_wrap}>
           <Button
             width="70%"
-            link={t('Main.botLink')}
+            link={BOT_URL}
             text={t('Main.buttonSecond')}
             showArrow={false}
           />

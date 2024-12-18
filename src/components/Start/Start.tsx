@@ -9,6 +9,7 @@ import Button from '../Button/Button';
 
 export default function Start() {
   const t = useTranslations();
+  const BOT_URL = process.env.NEXT_PUBLIC_BOT_URL || '';
 
   return (
     <section id="possibility" className={styles.start}>
@@ -85,11 +86,7 @@ export default function Start() {
           <span>{t('Start.buttonText.second')}</span>
         </p>
 
-        <Button
-          width="100%"
-          link={t('Main.botLink')}
-          text={t('Main.buttonSecond')}
-        />
+        <Button width="100%" link={BOT_URL} text={t('Main.buttonSecond')} />
       </div>
     </section>
   );

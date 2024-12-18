@@ -6,6 +6,7 @@ import { heroItems } from '@/data/data';
 
 export default function Hero() {
   const t = useTranslations();
+  const BOT_URL = process.env.NEXT_PUBLIC_BOT_URL || '';
 
   return (
     <section className={styles.hero}>
@@ -20,14 +21,14 @@ export default function Hero() {
           <Button
             width="76.5%"
             height="56px"
-            link={t('Main.botLink')}
+            link={BOT_URL}
             text={t('Main.button')}
           />
         </div>
         <div className={styles.desk_button}>
           <Button
             width="233px"
-            link={t('Main.botLink')}
+            link={BOT_URL}
             text={t('Main.buttonHero')}
             showArrow={false}
           />

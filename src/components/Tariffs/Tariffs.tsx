@@ -6,6 +6,7 @@ import Button from '../Button/Button';
 
 export default function Tariffs() {
   const t = useTranslations();
+  const CHAT_URL = process.env.NEXT_PUBLIC_CHAT_URL || '';
 
   return (
     <section id="tariffs" className={styles.tariffs}>
@@ -40,7 +41,7 @@ export default function Tariffs() {
             <div className={styles.tariffsButtonWrap}>
               <Button
                 width="100%"
-                link={t('Main.chatLink')}
+                link={CHAT_URL}
                 text={t('Main.buttonTariffs')}
                 showArrow={false}
               />

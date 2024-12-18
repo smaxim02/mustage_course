@@ -14,6 +14,7 @@ import Button from '../Button/Button';
 export default function Header({ locale }: { locale: string }) {
   const pathname = usePathname();
   const router = useRouter();
+  const CHAT_URL = process.env.NEXT_PUBLIC_CHAT_URL || '';
 
   const t = useTranslations('');
 
@@ -61,7 +62,7 @@ export default function Header({ locale }: { locale: string }) {
           <Button
             width="169px"
             height="56px"
-            link={t('Main.chatLink')}
+            link={CHAT_URL}
             text={t('Main.buttonFooter')}
             showArrow={false}
           />

@@ -11,6 +11,7 @@ import LanguageSwitcherFooter from '../LanguageSwitcherFooter/LanguageSwitcherFo
 
 export default function Footer({ locale }: { locale: string }) {
   const t = useTranslations();
+  const CHAT_URL = process.env.NEXT_PUBLIC_CHAT_URL || '';
 
   const pathname = usePathname();
   const router = useRouter();
@@ -62,7 +63,7 @@ export default function Footer({ locale }: { locale: string }) {
               <Button
                 width="86%"
                 height="56px"
-                link={t('Main.chatLink')}
+                link={CHAT_URL}
                 text={t('Main.buttonFooter')}
               />
             </div>

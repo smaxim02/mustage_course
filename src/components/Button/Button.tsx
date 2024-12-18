@@ -23,6 +23,7 @@ const Button: React.FC<ButtonProps> = ({
 }) => {
   const [isLoading, setIsLoading] = useState(false);
   const t = useTranslations();
+  const CHAT_URL = process.env.NEXT_PUBLIC_CHAT_URL || '';
 
   const handleClick = async () => {
     setIsLoading(true);
@@ -42,7 +43,7 @@ const Button: React.FC<ButtonProps> = ({
     window.location.href = link;
   };
 
-  const isTelegramLink = link === t('Main.chatLink');
+  const isTelegramLink = link === CHAT_URL;
 
   return (
     <button
