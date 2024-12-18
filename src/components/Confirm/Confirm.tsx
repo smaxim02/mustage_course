@@ -11,19 +11,15 @@ import { useEffect } from 'react';
 
 export default function Confirm({ locale }: { locale: string }) {
   const t = useTranslations();
-
   const CHAT_URL = process.env.NEXT_PUBLIC_CHAT_URL || '';
 
   const handleSubmit = async () => {
     try {
       const message = {
         bot: true,
-
         message: 'Користувача перенаправлено в бот',
       };
-      await sendToGoogleScript(message);
-      await sendMessage(message);
-
+      await Promise.all([sendToGoogleScript(message), sendMessage(message)]);
       window.location.href = CHAT_URL;
     } catch (error) {
       if (error instanceof Error) {

@@ -198,7 +198,7 @@
 .button_wrap {
   margin-bottom: 40px;
 
-  & a {
+ & button {
     margin: 0;
     max-width: 300px !important;
   }

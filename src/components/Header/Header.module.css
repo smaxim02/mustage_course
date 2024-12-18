@@ -93,13 +93,13 @@
     display: flex;
     gap: 12px;
 
-    & a {
+    & button {
       display: none;
     }
   }
   @media (min-width: 1200px) {
     gap: 34px;
-    & a {
+    & button {
       display: flex;
       min-width: auto;
     }

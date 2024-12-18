@@ -80,7 +80,7 @@
   align-items: center;
 
   @media (min-width: 1024px) {
-    & a {
+   & button{
       padding: 0 32px;
       width: 252px !important;
     }

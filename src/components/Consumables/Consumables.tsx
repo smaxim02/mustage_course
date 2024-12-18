@@ -41,7 +41,7 @@ export default function Consumables() {
         <div className={styles.button_wrap}>
           <Button
             width="70%"
-            link="https://t.me/mustage_academy_bot"
+            link={t('Main.botLink')}
             text={t('Main.buttonSecond')}
             showArrow={false}
           />

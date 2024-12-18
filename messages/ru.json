@@ -5,7 +5,8 @@
     "buttonFooter": "Написать нам",
     "buttonHero": "Забронировать место",
     "buttonTariffs": "Купить",
-    "buttonLink": "/"
+    "botLink": "https://t.me/mustage_academy_bot",
+    "chatLink": "https://t.me/mustage_manager_support"
   },
   "Confirm": {
     "button": "На главную",
@@ -633,7 +634,8 @@
       "phoneFormat": "Неверный формат номера",
       "nickRequired": "Никнейм обязателен",
       "nickFormat": "Неверный формат никнейма",
-      "sendError": "Произошла ошибка, попробуйте позже"
+      "sendError": "Произошла ошибка, попробуйте позже",
+      "validError": "В форме есть ошибки"
     },
     "form": {
       "namePlaceHolder": "Имя",

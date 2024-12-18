@@ -361,7 +361,7 @@
       max-width: 75%;
     }
 
-    & a {
+    & button{
       width: 252px !important;
       min-width: 252px;
       padding: 0 32px;
@@ -373,7 +373,7 @@
       max-width: 50%;
     }
 
-    & a {
+   & button {
       margin: 0;
     }
   }

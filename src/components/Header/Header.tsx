@@ -61,7 +61,7 @@ export default function Header({ locale }: { locale: string }) {
           <Button
             width="169px"
             height="56px"
-            link="https://t.me/mustage_manager_support"
+            link={t('Main.chatLink')}
             text={t('Main.buttonFooter')}
             showArrow={false}
           />

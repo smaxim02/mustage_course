@@ -271,7 +271,7 @@
 
   @media (min-width: 1480px) {
     flex-wrap: nowrap;
-    & a {
+    & button {
       margin: 0;
       width: 54% !important;
     }

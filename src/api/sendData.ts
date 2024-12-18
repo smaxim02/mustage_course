@@ -23,10 +23,27 @@ interface QueryParams {
   fbp?: string | null | undefined;
 }
 
-let url = 'Не вказано';
-if (typeof window !== 'undefined') {
-  url = document.referrer || 'Не вказано';
-}
+const getDefaultUrl = (): string =>
+  typeof window !== 'undefined'
+    ? document.referrer || 'Не вказано'
+    : 'Не вказано';
+const url = getDefaultUrl();
+
+const getQueryParams = (): QueryParams => {
+  const searchParams = new URLSearchParams(window.location.search);
+  return {
+    refId: searchParams.get('ref_id'),
+    sub1: searchParams.get('sub1'),
+    sub2: searchParams.get('sub2'),
+    sub3: searchParams.get('sub3'),
+    sub4: searchParams.get('sub4'),
+    sub5: searchParams.get('sub5'),
+    sub6: searchParams.get('sub6'),
+    sub7: searchParams.get('sub7'),
+    sub8: searchParams.get('sub8'),
+    fbp: searchParams.get('fbp'),
+  };
+};
 
 function getParamString(queryParams: QueryParams): string {
   let message = '';
@@ -40,74 +57,48 @@ function getParamString(queryParams: QueryParams): string {
   return message;
 }
 
-function getQueryParams(): QueryParams {
-  const searchParams = new URLSearchParams(window.location.search);
-  const params: QueryParams = {};
-
-  params.refId = searchParams.get('ref_id');
-  params.sub1 = searchParams.get('sub1');
-  params.sub2 = searchParams.get('sub2');
-  params.sub3 = searchParams.get('sub3');
-  params.sub4 = searchParams.get('sub4');
-  params.sub5 = searchParams.get('sub5');
-  params.sub6 = searchParams.get('sub6');
-  params.sub7 = searchParams.get('sub7');
-  params.sub8 = searchParams.get('sub8');
-  params.fbp = searchParams.get('fbp');
-
-  return params;
-}
-
-export const sendToGoogleScript = async (data: FormData) => {
-  const requestData = {
-    ...data,
-    url,
-    ...getQueryParams(),
-  };
-
+const sendPostRequest = async (
+  endpoint: string,
+  data: object
+): Promise<void> => {
   try {
     const response = await fetch(
-      `http://${BACK_HOST}:${BACK_PORT}/api/send-to-google-script`,
+      `http://${BACK_HOST}:${BACK_PORT}${endpoint}`,
       {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify(requestData),
+        body: JSON.stringify(data),
       }
     );
+
     if (!response.ok) {
-      throw new Error('Failed to send data to Google Script');
+      throw new Error(`Failed to send data to ${endpoint}`);
     }
   } catch (error) {
-    throw new Error('Error sending data to Google Script: ' + error);
+    console.error(`Error sending data to ${endpoint}:`, error);
+    throw error;
   }
 };
 
-export async function sendMessage(sendData: FormData) {
-  let message;
-  if (sendData.bot) {
-    message = '<b>Користувач перейшов в бот:</b>\n';
-  } else {
-    message = '<b>Користувач відправив форму:</b>\n';
-    message += 'ФІО: <b>' + sendData.name + '</b>\n';
-    message += 'Телефон: <b>' + sendData.phone + '</b>\n';
-    message += 'Tg username: <b>' + sendData.username + '</b>\n';
-  }
+export const sendToGoogleScript = async (data: FormData): Promise<void> => {
+  const requestData = { ...data, url, ...getQueryParams() };
+  await sendPostRequest('/api/send-to-google-script', requestData);
+};
 
-  message += 'Url: <b>' + url + '</b>\n';
+export const sendMessage = async (sendData: FormData): Promise<void> => {
+  const baseMessage = sendData.bot
+    ? '<b>Користувач перейшов в бот:</b>'
+    : `<b>Користувач відправив форму:</b>\nФІО: <b>${
+        sendData.name || ''
+      }</b>\nТелефон: <b>${sendData.phone || ''}</b>\nTg username: <b>${
+        sendData.username || ''
+      }</b>`;
 
-  const params = getQueryParams();
-  message += getParamString(params);
+  const message = `${baseMessage}\nUrl: <b>${url}</b>\n${getParamString(
+    getQueryParams()
+  )}`;
 
-  fetch(`http://${BACK_HOST}:${BACK_PORT}/api/send-message`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ message }),
-  }).catch(error => {
-    console.log('error', error);
-    throw new Error('Error sending message:', error);
-  });
-}
+  await sendPostRequest('/api/send-message', { message });
+};

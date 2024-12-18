@@ -40,7 +40,7 @@ export default function Tariffs() {
             <div className={styles.tariffsButtonWrap}>
               <Button
                 width="100%"
-                link="https://t.me/mustage_manager_support"
+                link={t('Main.chatLink')}
                 text={t('Main.buttonTariffs')}
                 showArrow={false}
               />

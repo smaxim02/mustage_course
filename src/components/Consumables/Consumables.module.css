@@ -278,7 +278,7 @@
 
 .button_wrap {
   @media (min-width: 768px) {
-    & a {
+    & button {
       width: 252px !important;
     }
   }

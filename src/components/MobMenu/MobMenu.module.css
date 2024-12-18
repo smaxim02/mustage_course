@@ -69,7 +69,7 @@
 }
 
 .button_wrap {
-  & a {
+ & button {
     min-width: auto;
   }
 }

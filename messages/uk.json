@@ -5,7 +5,8 @@
     "buttonFooter": "Написати нам",
     "buttonHero": "Забронювати місце",
     "buttonTariffs": "Придбати",
-    "buttonLink": "/"
+    "botLink": "https://t.me/mustage_academy_bot",
+    "chatLink": "https://t.me/mustage_manager_support"
   },
   "Confirm": {
     "button": "На головну",
@@ -639,7 +640,8 @@
       "phoneFormat": "Не вірний формат номеру",
       "nickRequired": "Нікнейм обов'язковий",
       "nickFormat": "Не вірний формат нікнейму",
-      "sendError": "Сталась помилка, спробуйте пізніше"
+      "sendError": "Сталась помилка, спробуйте пізніше",
+      "validError": "В формі є помилки"
     },
     "form": {
       "namePlaceHolder": "Ім'я",

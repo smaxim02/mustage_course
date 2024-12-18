@@ -62,7 +62,7 @@ export default function Footer({ locale }: { locale: string }) {
               <Button
                 width="86%"
                 height="56px"
-                link="https://t.me/mustage_manager_support"
+                link={t('Main.chatLink')}
                 text={t('Main.buttonFooter')}
               />
             </div>

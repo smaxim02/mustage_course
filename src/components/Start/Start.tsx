@@ -87,7 +87,7 @@ export default function Start() {
 
         <Button
           width="100%"
-          link="https://t.me/mustage_academy_bot"
+          link={t('Main.botLink')}
           text={t('Main.buttonSecond')}
         />
       </div>

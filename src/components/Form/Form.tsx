@@ -12,14 +12,11 @@ import { useRouter } from 'next/navigation';
 
 export default function Form() {
   const t = useTranslations();
-
   const nicknameRegex = /^@([a-zA-Z0-9_]{3,32})$/;
-
   const locale = useLocale();
+  const router = useRouter();
 
   const [isLoading, setIsLoading] = useState(false);
-
-  const router = useRouter();
 
   const [formData, setFormData] = useState({
     name: '',
@@ -36,7 +33,6 @@ export default function Form() {
   const handleChange = (e: ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
-
     setErrors({ ...errors, [name]: '' });
   };
 
@@ -74,34 +70,33 @@ export default function Form() {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
     e.preventDefault();
-    if (validateForm()) {
-      try {
-        const message = {
-          message: 'Користувач відправив форму',
-          name: formData.name,
-          username: formData.nickname,
-          phone: formData.phone,
-          bot: false,
-        };
-        setIsLoading(true);
-        await sendToGoogleScript(message);
-        await sendMessage(message);
-        toast.success(t('Form.form.ok'));
-        const currentQueryParams = new URLSearchParams(window.location.search);
-        const queryParams = currentQueryParams.toString();
+    if (!validateForm()) {
+      toast.error(t('Form.errors.validError'));
+      return;
+    }
 
-        if (queryParams) {
-          router.push(`/${locale}/confirm?${queryParams}`);
-        } else {
-          router.push(`/${locale}/confirm`);
-        }
-        setIsLoading(false);
-      } catch {
-        setIsLoading(false);
-        toast.error(t('Form.errors.sendError'));
-      }
-    } else {
+    try {
+      const message = {
+        message: 'Користувач відправив форму',
+        name: formData.name,
+        username: formData.nickname,
+        phone: formData.phone,
+        bot: false,
+      };
+      setIsLoading(true);
+      await Promise.all([sendToGoogleScript(message), sendMessage(message)]);
+      toast.success(t('Form.form.ok'));
+
+      const currentQueryParams = new URLSearchParams(window.location.search);
+      const queryParams = currentQueryParams.toString();
+
+      router.push(
+        queryParams ? `/${locale}/confirm?${queryParams}` : `/${locale}/confirm`
+      );
+    } catch {
       toast.error(t('Form.errors.sendError'));
+    } finally {
+      setIsLoading(false);
     }
   };
 
