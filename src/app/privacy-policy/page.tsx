@@ -144,7 +144,7 @@ const PrivacyPolicy = async () => {
           <a href="mailto:pankratiix.group@gmail.com">
             pankratiix.group@gmail.com
           </a>
-          , +380 (95) 427-66-57.
+          , <a href="tel:+380954276657">+380 (95) 427-66-57</a>.
         </p>
       </section>
     </main>
