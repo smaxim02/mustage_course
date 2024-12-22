@@ -70,7 +70,7 @@ export default function Footer({ locale }: { locale: string }) {
           </div>
         </div>
         <div className={styles.policy_wrap}>
-          <a href="/" target="_blank" rel="noopener noreferrer">
+          <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
             {t('Footer.policy')}
           </a>
 
