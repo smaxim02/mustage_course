@@ -12,7 +12,6 @@ import useStore from '@/store/useStore';
 export default function Footer() {
   const t = useTranslations();
   const CHAT_URL = process.env.NEXT_PUBLIC_CHAT_URL || '';
-  const [query, setQuery] = useState<URLSearchParams | null>(null);
 
   const { query, locale } = useStore();
 
