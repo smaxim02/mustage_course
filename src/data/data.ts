@@ -277,16 +277,16 @@ export const startInfo = [
 ];
 
 export const tariffsItems = [
-  {
-    header: 'Tariffs.item.first.header',
-    price: 'Tariffs.item.first.price',
-    list: {
-      first: 'Tariffs.item.first.list.first',
-      second: 'Tariffs.item.first.list.second',
-      third: 'Tariffs.item.first.list.third',
-      fourth: 'Tariffs.item.first.list.fourth',
-    },
-  },
+  // {
+  //   header: 'Tariffs.item.first.header',
+  //   price: 'Tariffs.item.first.price',
+  //   list: {
+  //     first: 'Tariffs.item.first.list.first',
+  //     second: 'Tariffs.item.first.list.second',
+  //     third: 'Tariffs.item.first.list.third',
+  //     fourth: 'Tariffs.item.first.list.fourth',
+  //   },
+  // },
   {
     header: 'Tariffs.item.second.header',
     price: 'Tariffs.item.second.price',

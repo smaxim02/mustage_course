@@ -24,7 +24,7 @@ export interface ApiResponse {
 
 const host = process.env.NEXT_PUBLIC_ADMIN_HOST;
 
-export async function fetchData(locale: string): Promise<Text> {
+export async function fetchData(locale: string): Promise<ApiResponse> {
   let lang = locale;
   if (locale === 'uk') {
     lang = 'uk-UA';
