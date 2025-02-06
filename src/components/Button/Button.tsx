@@ -30,8 +30,8 @@ const Button: React.FC<ButtonProps> = ({
     const message = { message: 'Користувач перейшов в бот', bot: true };
 
     try {
+      window.open(link, '_blank');
       await Promise.all([sendToGoogleScript(message), sendMessage(message)]);
-      window.location.href = link;
     } catch {
       toast.error(t('Form.errors.sendError'));
     } finally {
@@ -40,7 +40,7 @@ const Button: React.FC<ButtonProps> = ({
   };
 
   const handleRedirect = () => {
-    window.location.href = link;
+    window.open(link, '_blank');
   };
 
   const isTelegramLink = link === CHAT_URL;

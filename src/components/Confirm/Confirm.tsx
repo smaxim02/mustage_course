@@ -8,10 +8,13 @@ import Icon from '@/helpers/Icon';
 import { toast } from 'react-toastify';
 import { sendMessage, sendToGoogleScript } from '@/api/sendData';
 import { useEffect } from 'react';
+import useStore from '@/store/useStore';
 
-export default function Confirm({ locale }: { locale: string }) {
+export default function Confirm() {
   const t = useTranslations();
   const CHAT_URL = process.env.NEXT_PUBLIC_CHAT_URL || '';
+
+  const { query, locale } = useStore();
 
   const handleSubmit = async () => {
     try {
@@ -33,13 +36,13 @@ export default function Confirm({ locale }: { locale: string }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       handleSubmit();
-    }, 5000);
+    }, 10000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <section className={styles.confirm}>
-      <Link className={styles.logo_wrap} href={`/${locale}/`}>
+      <Link className={styles.logo_wrap} href={`/${locale}/${query}`}>
         <Icon name="icon-logo" width={58} height={48} />
         <span className={styles.logo_text}>{t('Confirm.logo')}</span>
       </Link>

@@ -2,19 +2,21 @@
 
 import Icon from '@/helpers/Icon';
 import styles from './Form.module.css';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { ChangeEvent, FormEvent, useState } from 'react';
 import logoBack from '../../img/form/logo.webp';
 import Image from 'next/image';
 import { sendMessage, sendToGoogleScript } from '@/api/sendData';
 import { toast } from 'react-toastify';
 import { useRouter } from 'next/navigation';
+import useStore from '@/store/useStore';
 
 export default function Form() {
   const t = useTranslations();
   const nicknameRegex = /^@([a-zA-Z0-9_]{3,32})$/;
-  const locale = useLocale();
   const router = useRouter();
+
+  const { query, locale } = useStore();
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -87,12 +89,7 @@ export default function Form() {
       await Promise.all([sendToGoogleScript(message), sendMessage(message)]);
       toast.success(t('Form.form.ok'));
 
-      const currentQueryParams = new URLSearchParams(window.location.search);
-      const queryParams = currentQueryParams.toString();
-
-      router.push(
-        queryParams ? `/${locale}/confirm?${queryParams}` : `/${locale}/confirm`
-      );
+      router.push(query ? `/${locale}/confirm?${query}` : `/${locale}/confirm`);
     } catch {
       toast.error(t('Form.errors.sendError'));
     } finally {
@@ -149,7 +146,7 @@ export default function Form() {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="0993483455"
+                placeholder="993483455"
                 className={`${styles.input} ${
                   errors.phone ? styles.error : ''
                 }`}

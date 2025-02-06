@@ -8,6 +8,7 @@ import { getMessages } from 'next-intl/server';
 import { ToastContainer } from 'react-toastify';
 import { Suspense } from 'react';
 import { FacebookPixel } from '@/components/FacebookPixel/FacebookPixel';
+import QueryInitializer from '@/components/QueryInitializer/QueryInitializer';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -72,12 +73,14 @@ export default async function RootLayout({
         <body
           className={`${montserrat.variable} ${wixMadeforDisplay.variable}`}
         >
+          <QueryInitializer>
           <Header locale={locale} />
           {children}
           <ToastContainer />
           <Suspense fallback={null}>
             <FacebookPixel locale={locale} />
           </Suspense>
+          </QueryInitializer>
         </body>
       </NextIntlClientProvider>
     </html>

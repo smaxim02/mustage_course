@@ -4,29 +4,23 @@ import Icon from '@/helpers/Icon';
 import styles from './Footer.module.css';
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
 import Button from '../Button/Button';
 import { menuItemsFooter, socialItems } from '@/data/data';
-import LanguageSwitcherFooter from '../LanguageSwitcherFooter/LanguageSwitcherFooter';
+import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
+import useStore from '@/store/useStore';
 
-export default function Footer({ locale }: { locale: string }) {
+export default function Footer() {
   const t = useTranslations();
   const CHAT_URL = process.env.NEXT_PUBLIC_CHAT_URL || '';
 
-  const pathname = usePathname();
-  const router = useRouter();
-
-  const handleLanguageChange = (lang: string) => {
-    const path = pathname.split('/').slice(2).join('/');
-    router.push(`/${lang}/${path}`);
-  };
+  const { query, locale } = useStore();
 
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.wrap}>
           <div className={styles.menu_wrap}>
-            <Link className={styles.logo_wrap} href={`/${locale}/`}>
+            <Link className={styles.logo_wrap} href={`/${locale}/${query}`}>
               <Icon name="icon-logo-dark" width={40} height={33} />
               <span>{t('Header.home')}</span>
             </Link>
@@ -54,10 +48,7 @@ export default function Footer({ locale }: { locale: string }) {
           </div>
           <div className={styles.second_wrap}>
             <div className={styles.lang_wrap}>
-              <LanguageSwitcherFooter
-                locale={locale}
-                handleLanguageChange={handleLanguageChange}
-              />
+              <LanguageSwitcher isFooter={true} />
             </div>
             <div className={styles.button_wrap}>
               <Button

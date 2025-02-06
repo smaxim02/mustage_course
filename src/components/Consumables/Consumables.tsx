@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './Consumables.module.css';
 import { useTranslations } from 'next-intl';
 import { consumablesItems } from '@/data/data';

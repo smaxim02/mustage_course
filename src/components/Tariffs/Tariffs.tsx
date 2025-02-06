@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './Tariffs.module.css';
 import { useTranslations } from 'next-intl';
 import { tariffsBanks, tariffsItems } from '@/data/data';

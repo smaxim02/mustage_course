@@ -16,7 +16,6 @@ import Tariffs from '@/components/Tariffs/Tariffs';
 import Working from '@/components/Working/Working';
 
 export default function Home() {
-  const locale = useLocale();
 
   return (
     <>
@@ -36,7 +35,7 @@ export default function Home() {
         <Answers />
         <Form />
       </main>
-      <Footer locale={locale} />
+      <Footer />
     </>
   );
 }

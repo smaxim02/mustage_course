@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './Advantages.module.css';
 import { useTranslations } from 'next-intl';
 import { advantagesItems } from '@/data/data';

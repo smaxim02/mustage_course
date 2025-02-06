@@ -1,6 +1,3 @@
-const BACK_HOST = process.env.NEXT_PUBLIC_BACK_HOST;
-const BACK_PORT = process.env.NEXT_PUBLIC_BACK_PORT;
-
 interface FormData {
   message: string;
   name?: string;
@@ -57,34 +54,30 @@ function getParamString(queryParams: QueryParams): string {
   return message;
 }
 
-const sendPostRequest = async (
-  endpoint: string,
-  data: object
-): Promise<void> => {
+export const sendToGoogleScript = async (data: FormData) => {
+  const requestData = {
+    ...data,
+    url,
+    ...getQueryParams(),
+  };
+
   try {
-    const response = await fetch(
-      `http://${BACK_HOST}:${BACK_PORT}${endpoint}`,
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      }
-    );
+    const response = await fetch('/api/sendToGoogle', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestData),
+    });
 
     if (!response.ok) {
-      throw new Error(`Failed to send data to ${endpoint}`);
+      const errorText = await response.text();
+      throw new Error(`Failed to send data to API: ${errorText}`);
     }
   } catch (error) {
-    console.error(`Error sending data to ${endpoint}:`, error);
-    throw error;
+    console.error('Error sending data to API: ', error);
+    throw new Error('Error sending data to API: ' + error);
   }
-};
-
-export const sendToGoogleScript = async (data: FormData): Promise<void> => {
-  const requestData = { ...data, url, ...getQueryParams() };
-  await sendPostRequest('/api/send-to-google-script', requestData);
 };
 
 export const sendMessage = async (sendData: FormData): Promise<void> => {
@@ -100,5 +93,21 @@ export const sendMessage = async (sendData: FormData): Promise<void> => {
     getQueryParams()
   )}`;
 
-  await sendPostRequest('/api/send-message', { message });
+  try {
+    const response = await fetch('/api/sendToTg', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(message),
+    });
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Failed to send data to API: ${errorText}`);
+    }
+  } catch (error) {
+    console.error('Error sending data to API: ', error);
+    throw new Error('Error sending data to API: ' + error);
+  }
 };

@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './MustHave.module.css';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';

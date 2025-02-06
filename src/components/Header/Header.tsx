@@ -2,7 +2,6 @@
 
 import { useTranslations } from 'next-intl';
 import Link from 'next/link';
-import { usePathname, useRouter } from 'next/navigation';
 import styles from './Header.module.css';
 import Icon from '@/helpers/Icon';
 import MobMenu from '../MobMenu/MobMenu';
@@ -10,26 +9,23 @@ import { useState } from 'react';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { menuItems } from '@/data/data';
 import Button from '../Button/Button';
+import useStore from '@/store/useStore';
 
 export default function Header({ locale }: { locale: string }) {
-  const pathname = usePathname();
-  const router = useRouter();
   const CHAT_URL = process.env.NEXT_PUBLIC_CHAT_URL || '';
+
+  const { query } = useStore();
 
   const t = useTranslations('');
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const handleLanguageChange = (lang: string) => {
-    const path = pathname.split('/').slice(2).join('/');
-    router.push(`/${lang}/${path}`);
-  };
 
   const closeMenu = () => {
     setIsMenuOpen(false);
     document.body.style.overflow = 'auto';
     document.body.style.touchAction = 'auto';
   };
+
   const openMenu = () => {
     setIsMenuOpen(true);
     document.body.style.overflow = 'hidden';
@@ -40,7 +36,7 @@ export default function Header({ locale }: { locale: string }) {
       className={`${styles.header} ${isMenuOpen && styles.mobile_menu_open}`}
     >
       <div className={styles.container}>
-        <Link className={styles.logo_wrap} href={`/${locale}/`}>
+        <Link className={styles.logo_wrap} href={`/${locale}/${query}`}>
           <Icon name="icon-logo" width={40} height={33} />
           <span className={styles.logo_text}>{t('Header.home')}</span>
         </Link>
@@ -55,10 +51,7 @@ export default function Header({ locale }: { locale: string }) {
           </ul>
         </nav>
         <div className={styles.button_wrap}>
-          <LanguageSwitcher
-            locale={locale}
-            handleLanguageChange={handleLanguageChange}
-          />
+          <LanguageSwitcher />
           <Button
             width="169px"
             height="56px"
@@ -79,12 +72,7 @@ export default function Header({ locale }: { locale: string }) {
           <span className={styles.line}></span>
         </div>
 
-        <MobMenu
-          locale={locale}
-          handleLanguageChange={handleLanguageChange}
-          isMenuOpen={isMenuOpen}
-          closeMenu={closeMenu}
-        />
+        <MobMenu isMenuOpen={isMenuOpen} closeMenu={closeMenu} />
       </div>
     </header>
   );

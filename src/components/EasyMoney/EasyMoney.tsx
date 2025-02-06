@@ -1,3 +1,5 @@
+'use client';
+
 import styles from './EasyMoney.module.css';
 import { useTranslations } from 'next-intl';
 
