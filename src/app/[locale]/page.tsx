@@ -1,4 +1,3 @@
-import { useLocale } from 'next-intl';
 import Advantages from '@/components/Advantages/Advantages';
 import Answers from '@/components/Ansvers/Answers';
 import Consumables from '@/components/Consumables/Consumables';

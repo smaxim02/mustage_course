@@ -5,7 +5,7 @@ import Link from 'next/link';
 import styles from './Header.module.css';
 import Icon from '@/helpers/Icon';
 import MobMenu from '../MobMenu/MobMenu';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import LanguageSwitcher from '../LanguageSwitcher/LanguageSwitcher';
 import { menuItems } from '@/data/data';
 import Button from '../Button/Button';

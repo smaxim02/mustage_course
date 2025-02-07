@@ -1,21 +1,34 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": {
+    "uk": "Курс з арбітражу трафіку",
+    "ru": "Курс по арбитражу трафика"
+  },
+  "short_name": {
+    "uk": "Mustage",
+    "ru": "Mustage"
+  },
+  "description": {
+    "uk": "Безкоштовний курс з арбітражу трафіку: навчись запускати рекламу, працювати з антидетект браузерами, мобільними проксі та автоматизацією.",
+    "ru": "Бесплатный курс по арбитражу трафика: научись запускать рекламу, работать с антидетект браузерами, мобильными прокси и автоматизацией."
+  },
   "icons": [
     {
-      "src": "/web-app-manifest-192x192.png",
+      "src": "/assets/web-app-manifest-192x192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "maskable"
     },
     {
-      "src": "/web-app-manifest-512x512.png",
+      "src": "/assets/web-app-manifest-512x512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "theme_color": "#d95043",
+  "background_color": "#f5f6fa",
+  "display": "standalone",
+  "lang": ["uk", "ru"],
+  "start_url": "/uk",
+  "scope": "/"
 }
