@@ -10,6 +10,7 @@ export interface Tariff {
   key: string;
   Name: string;
   Price: string;
+  Price_USD: string;
   createdAt: string;
   updatedAt: string;
   publishedAt: string;
@@ -24,19 +25,21 @@ export interface ApiResponse {
 
 const host = process.env.NEXT_PUBLIC_ADMIN_HOST;
 
-export async function fetchData(locale: string): Promise<ApiResponse> {
-  let lang = locale;
-  if (locale === 'uk') {
-    lang = 'uk-UA';
-  }
+export async function fetchData(
+  locale: string
+): Promise<{ tariffs: Tariff[]; currencySymbol: string; currencyKey: string }> {
+  let lang = locale === 'uk' ? 'uk-UA' : locale;
+
+  const currencySymbol = locale === 'uk' ? 'грн' : '$';
+  const currencyKey = locale === 'uk' ? 'Price' : 'Price_USD';
+
   const url = `${host}/api/tariffs?locale=${lang}&populate=*`;
 
   const response = await fetch(url);
-
   if (!response.ok) {
-    throw new Error(`Failed to fetch vacancy: ${response.statusText}`);
+    throw new Error(`Failed to fetch tariffs: ${response.statusText}`);
   }
 
-  const data = await response.json();
-  return data.data;
+  const data: ApiResponse = await response.json();
+  return { tariffs: data.data, currencySymbol, currencyKey };
 }

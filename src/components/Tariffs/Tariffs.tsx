@@ -2,16 +2,22 @@
 
 import styles from './Tariffs.module.css';
 import { useTranslations } from 'next-intl';
-import { tariffsBanks, tariffsItems } from '@/data/data';
+import { tariffsBanks } from '@/data/data';
 import Icon from '@/helpers/Icon';
 import Button from '../Button/Button';
-import { ApiResponse, fetchData } from '@/api/getTariffs';
+import { Tariff, TariffItem, fetchData } from '@/api/getTariffs';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
 
 export default function Tariffs() {
   const t = useTranslations();
   const CHAT_URL = process.env.NEXT_PUBLIC_CHAT_URL || '';
+
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<boolean>(false);
+  const [tariffsData, setTariffsData] = useState<Tariff[]>([]);
+  const [currencySymbol, setCurrencySymbol] = useState<string>('грн');
+  const [currencyKey, setCurrencyKey] = useState<string>('Price');
 
   const pathname = usePathname();
   const getLocaleFromPath = (pathname: string): string => {
@@ -20,19 +26,16 @@ export default function Tariffs() {
   };
   const locale = getLocaleFromPath(pathname || '');
 
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<boolean>(false);
-  const [data, setData] = useState<ApiResponse | null>(null);
-
   useEffect(() => {
-    // Якщо locale порожня, не робимо запит
     if (!locale) return;
     setLoading(true);
     setError(false);
 
     fetchData(locale)
-      .then(response => {
-        setData(response);
+      .then(({ tariffs, currencySymbol, currencyKey }) => {
+        setTariffsData(tariffs);
+        setCurrencySymbol(currencySymbol);
+        setCurrencyKey(currencyKey);
         setLoading(false);
       })
       .catch(() => {
@@ -41,7 +44,7 @@ export default function Tariffs() {
       });
   }, [locale]);
 
-  if (loading) {
+  if (loading || error) {
     return (
       <div className={styles.dots_loading}>
         <span className={styles.dot}></span>
@@ -51,73 +54,48 @@ export default function Tariffs() {
     );
   }
 
-  // Переконуємось, що data є масивом; якщо ні – використовуємо тарифний масив з резервних даних.
-  const tariffsData =
-    !error && data && Array.isArray(data)
-      ? [...data].sort((a, b) => Number(a.Price) - Number(b.Price))
-      : tariffsItems;
+  const sortedTariffs =
+    !error && tariffsData.length
+      ? [...tariffsData].sort(
+          (a, b) =>
+            Number(a[currencyKey as keyof Tariff]) -
+            Number(b[currencyKey as keyof Tariff])
+        )
+      : [];
 
   return (
     <section id="tariffs" className={styles.tariffs}>
       <h2 className={styles.tariffsHeader}>{t('Tariffs.header')}</h2>
 
       <ul className={styles.tariffsList}>
-        {tariffsData.map((item, index) => {
-          // Визначаємо, чи є дані з API (мають поле TariffsItems)
-          const isApiData = 'TariffsItems' in item;
-
+        {sortedTariffs.map((item, index) => {
           return (
             <li key={index} className={styles.tariffsListItem}>
               <div className={styles.tariffsListItemHeaderWrap}>
-                <h3 className={styles.tariffsListItemHeader}>
-                  {isApiData ? item.Name : t(item.header)}
-                </h3>
+                <h3 className={styles.tariffsListItemHeader}>{item.Name}</h3>
               </div>
               <span className={styles.tariffsListItemPrice}>
-                {isApiData ? item.Price : t(item.price)}
+                {currencySymbol === 'грн'
+                  ? `${item[currencyKey as keyof Tariff]}${currencySymbol}`
+                  : `${currencySymbol} ${item[currencyKey as keyof Tariff]}`}
               </span>
 
               <ul className={styles.tariffsSubList}>
-                {isApiData
-                  ? // Для даних з API: TariffsItems – це масив об'єктів
-                    (
-                      item.TariffsItems as Array<{
-                        id: number;
-                        TariffsItem: string;
-                      }>
-                    ).map((tariffItem, i) => (
-                      <li className={styles.tariffsSubListItem} key={i}>
-                        <div className={styles.tariffsSubListItemIconWrap}>
-                          <Icon
-                            name="icon-check"
-                            width={12}
-                            height={9}
-                            color="#575FF2"
-                          />
-                        </div>
-                        <p className={styles.tariffsSubListItemText}>
-                          {tariffItem.TariffsItem}
-                        </p>
-                      </li>
-                    ))
-                  : // Для резервних даних: перетворюємо об'єкт в масив записів
-                    Object.entries(item.list).map(([key, value]) =>
-                      value ? (
-                        <li className={styles.tariffsSubListItem} key={key}>
-                          <div className={styles.tariffsSubListItemIconWrap}>
-                            <Icon
-                              name="icon-check"
-                              width={12}
-                              height={9}
-                              color="#575FF2"
-                            />
-                          </div>
-                          <p className={styles.tariffsSubListItemText}>
-                            {t(value)}
-                          </p>
-                        </li>
-                      ) : null
-                    )}
+                {item.TariffsItems?.map((tariffItem: TariffItem, i: number) => (
+                  <li className={styles.tariffsSubListItem} key={i}>
+                    <div className={styles.tariffsSubListItemIconWrap}>
+                      <Icon
+                        name="icon-check"
+                        width={12}
+                        height={9}
+                        color="#575FF2"
+                      />
+                    </div>
+                    <p className={styles.tariffsSubListItemText}>
+                      {tariffItem.TariffsItem}
+                    </p>
+                  </li>
+                ))}
               </ul>
 
               <div className={styles.tariffsButtonWrap}>

@@ -106,7 +106,7 @@
   @media (min-width: 1024px) {
     font-weight: 600;
     line-height: 79.2px;
-    font-size: var(--fs_xxxlarge);
+    font-size: 70px;
     padding-bottom: 24px;
     margin-bottom: 32px;
   }
