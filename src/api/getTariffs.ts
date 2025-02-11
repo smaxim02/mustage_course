@@ -28,10 +28,12 @@ const host = process.env.NEXT_PUBLIC_ADMIN_HOST;
 export async function fetchData(
   locale: string
 ): Promise<{ tariffs: Tariff[]; currencySymbol: string; currencyKey: string }> {
-  let lang = locale === 'uk' ? 'uk-UA' : locale;
+  const lang = locale === 'uk' ? 'uk-UA' : locale;
 
-  const currencySymbol = locale === 'uk' ? 'грн' : '$';
-  const currencyKey = locale === 'uk' ? 'Price' : 'Price_USD';
+  // const currencySymbol = locale === 'uk' ? 'грн' : '$';
+  // const currencyKey = locale === 'uk' ? 'Price' : 'Price_USD';
+  const currencySymbol = '$';
+  const currencyKey = 'Price_USD';
 
   const url = `${host}/api/tariffs?locale=${lang}&populate=*`;
 
