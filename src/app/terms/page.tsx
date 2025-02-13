@@ -35,11 +35,12 @@ const PrivacyPolicy = async () => {
           фактичного проживання фізичної особи - підприємця &mdash; Україна,
           Київ, вул. Василя Кучера, буд. 2, кв. 15
           <br />
-          <a href="mailto:mustage.team@gmail.com">mustage.team@gmail.com</a>,
-          <a href="tel:+380734043616">+380 (73) 404-36-16</a>.
+          <a href="mailto:mustage.team@gmail.com">
+            mustage.team@gmail.com
+          </a>, <a href="tel:+380734043616">+380 (73) 404-36-16</a>.
           <br />
           Якщо у вас виникли будь-які запитання, зв&rsquo;яжіться з нами
-          електронною поштою за адресою
+          електронною поштою за адресою:{' '}
           <a href="mailto:mustage.team@gmail.com">mustage.team@gmail.com</a>.
           <br />
           <h3>АКЦЕПТ ПУБЛІЧНОЇ ОФЕРТИ</h3>
