@@ -230,23 +230,23 @@
 
   @media (min-width: 1024px) {
     margin-bottom: 0;
-    width: 392px;
+    width: 400px;
     display: flex;
     flex-wrap: wrap;
     gap: 8px;
-    margin-right: 8px;
 
     & > :nth-child(1) {
       flex: 1 auto;
     }
 
     & > :nth-child(2) {
-      width: 248px;
+      width: 246px;
       margin-right: 0px;
     }
 
     & > :nth-child(3) {
       flex: 1 auto;
+      width: 145px;
     }
 
     & > div {
@@ -258,7 +258,7 @@
       margin: 0;
 
       & p {
-        font-size: var(--fs_xsmall);
+        font-size: 15px;
         line-height: 1.1;
       }
     }

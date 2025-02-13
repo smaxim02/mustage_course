@@ -61,9 +61,9 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.policy_wrap}>
-          <a href="/privacy-policy" target="_blank" rel="noopener noreferrer">
+          <Link href="/terms" target="_blank" rel="noopener noreferrer">
             {t('Footer.policy')}
-          </a>
+          </Link>
 
           <ul className={styles.social_desk}>
             {socialItems.map((item, index) => (

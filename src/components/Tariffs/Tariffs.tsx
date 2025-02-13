@@ -76,7 +76,7 @@ export default function Tariffs() {
               </div>
               <span className={styles.tariffsListItemPrice}>
                 {currencySymbol === 'грн'
-                  ? `${item[currencyKey as keyof Tariff]}${currencySymbol}`
+                  ? `${item[currencyKey as keyof Tariff]} ${currencySymbol}`
                   : `${currencySymbol} ${item[currencyKey as keyof Tariff]}`}
               </span>
 

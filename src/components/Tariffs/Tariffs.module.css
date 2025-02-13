@@ -94,6 +94,7 @@
 }
 
 .tariffsListItemPrice {
+  white-space: nowrap;
   display: block;
   font-family: var(--font_mons);
   font-size: var(--fs_xlarge);
@@ -106,9 +107,12 @@
   @media (min-width: 1024px) {
     font-weight: 600;
     line-height: 79.2px;
-    font-size: 70px;
+    font-size: 60px;
     padding-bottom: 24px;
     margin-bottom: 32px;
+  }
+  @media (min-width: 1490px) {
+    font-size: var(--fs_xxxlarge);
   }
 }
 

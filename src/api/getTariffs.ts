@@ -32,8 +32,8 @@ export async function fetchData(
 
   // const currencySymbol = locale === 'uk' ? 'грн' : '$';
   // const currencyKey = locale === 'uk' ? 'Price' : 'Price_USD';
-  const currencySymbol = '$';
-  const currencyKey = 'Price_USD';
+  const currencySymbol = 'грн';
+  const currencyKey = 'Price';
 
   const url = `${host}/api/tariffs?locale=${lang}&populate=*`;
 

@@ -277,16 +277,6 @@ export const startInfo = [
 ];
 
 export const tariffsItems = [
-  // {
-  //   header: 'Tariffs.item.first.header',
-  //   price: 'Tariffs.item.first.price',
-  //   list: {
-  //     first: 'Tariffs.item.first.list.first',
-  //     second: 'Tariffs.item.first.list.second',
-  //     third: 'Tariffs.item.first.list.third',
-  //     fourth: 'Tariffs.item.first.list.fourth',
-  //   },
-  // },
   {
     header: 'Tariffs.item.second.header',
     price: 'Tariffs.item.second.price',
@@ -408,10 +398,6 @@ export const programItems: ProgramItem[] = [
         first: 'Program.itemsBlock.first.fifth.first',
         second: 'Program.itemsBlock.first.fifth.second',
       },
-      sixth: {
-        first: 'Program.itemsBlock.first.sixth.first',
-        second: 'Program.itemsBlock.first.sixth.second',
-      },
     },
   },
   {
@@ -487,14 +473,6 @@ export const programItems: ProgramItem[] = [
       fourth: {
         first: 'Program.itemsBlock.third.fourth.first',
         second: 'Program.itemsBlock.third.fourth.second',
-      },
-      fifth: {
-        first: 'Program.itemsBlock.third.fifth.first',
-        second: 'Program.itemsBlock.third.fifth.second',
-      },
-      sixth: {
-        first: 'Program.itemsBlock.third.sixth.first',
-        second: 'Program.itemsBlock.third.sixth.second',
       },
     },
   },
@@ -615,10 +593,6 @@ export const programItems: ProgramItem[] = [
       fifth: {
         first: 'Program.itemsBlock.sixth.fifth.first',
         second: 'Program.itemsBlock.sixth.fifth.second',
-      },
-      sixth: {
-        first: 'Program.itemsBlock.sixth.sixth.first',
-        second: 'Program.itemsBlock.sixth.sixth.second',
       },
     },
   },
