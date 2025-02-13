@@ -20,18 +20,20 @@ export default function Tariffs() {
   const [currencyKey, setCurrencyKey] = useState<string>('Price');
 
   const pathname = usePathname();
-  const getLocaleFromPath = (pathname: string): string => {
+  const getLocaleFromPath = (pathname: string): [string, boolean] => {
     const pathSegments = pathname.split('/');
-    return pathSegments[1] || 'uk';
+    const locale = pathSegments[1] || 'uk';
+    const hasUkr = pathname.includes('ukr');
+    return [locale, hasUkr];
   };
-  const locale = getLocaleFromPath(pathname || '');
+
+  const [locale, hasUkr] = getLocaleFromPath(pathname || '');
 
   useEffect(() => {
     if (!locale) return;
     setLoading(true);
     setError(false);
-
-    fetchData(locale)
+    fetchData(locale, hasUkr)
       .then(({ tariffs, currencySymbol, currencyKey }) => {
         setTariffsData(tariffs);
         setCurrencySymbol(currencySymbol);

@@ -26,14 +26,17 @@ export interface ApiResponse {
 const host = process.env.NEXT_PUBLIC_ADMIN_HOST;
 
 export async function fetchData(
-  locale: string
-): Promise<{ tariffs: Tariff[]; currencySymbol: string; currencyKey: string }> {
+  locale: string,
+  hasUkr: boolean
+): Promise<{
+  tariffs: Tariff[];
+  currencySymbol: string;
+  currencyKey: string;
+}> {
   const lang = locale === 'uk' ? 'uk-UA' : locale;
 
-  // const currencySymbol = locale === 'uk' ? 'грн' : '$';
-  // const currencyKey = locale === 'uk' ? 'Price' : 'Price_USD';
-  const currencySymbol = 'грн';
-  const currencyKey = 'Price';
+  const currencySymbol = hasUkr ? 'грн' : '$';
+  const currencyKey = hasUkr ? 'Price' : 'Price_USD';
 
   const url = `${host}/api/tariffs?locale=${lang}&populate=*`;
 

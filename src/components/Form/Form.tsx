@@ -89,7 +89,7 @@ export default function Form() {
       await Promise.all([sendToGoogleScript(message), sendMessage(message)]);
       toast.success(t('Form.form.ok'));
 
-      router.push(query ? `/${locale}/confirm?${query}` : `/${locale}/confirm`);
+      router.push(query ? `/${locale}/confirm${query}` : `/${locale}/confirm`);
     } catch {
       toast.error(t('Form.errors.sendError'));
     } finally {
