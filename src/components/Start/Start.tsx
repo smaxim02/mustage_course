@@ -49,7 +49,7 @@ export default function Start() {
         <div className={styles.second_wrap}>
           <div className={styles.stat_wrap}>
             <div>
-              <span>17.7k</span>
+              <span>19k</span>
               <p>{t('Start.videoFollow')}</p>
             </div>
             <div>
