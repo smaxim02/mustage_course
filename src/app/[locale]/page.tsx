@@ -15,7 +15,6 @@ import Tariffs from '@/components/Tariffs/Tariffs';
 import Working from '@/components/Working/Working';
 
 export default function Home() {
-
   return (
     <>
       <main>

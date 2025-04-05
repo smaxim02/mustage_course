@@ -24,7 +24,7 @@ const wixMadeforDisplay = Wix_Madefor_Display({
   adjustFontFallback: false,
 });
 
-export const localeMetadata: Record<
+const localeMetadata: Record<
   string,
   { title: string; description: string; keywords: string }
 > = {
