@@ -8,6 +8,9 @@ import Button from '../Button/Button';
 import { Tariff, TariffItem, fetchData } from '@/api/getTariffs';
 import { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
+import Image from 'next/image';
+import mono from '../../img/tariffs/mono.webp';
+import mono_mob from '../../img/tariffs/mono_mob.webp';
 
 export default function Tariffs() {
   const t = useTranslations();
@@ -112,7 +115,26 @@ export default function Tariffs() {
           );
         })}
       </ul>
-
+      <div className={styles.tariffsMono}>
+        <Image
+          className={styles.monoDesc}
+          src={mono}
+          width={0}
+          height={0}
+          sizes="100vw"
+          alt="Monobank image"
+          priority
+        />
+        <Image
+          className={styles.monoMob}
+          src={mono_mob}
+          width={0}
+          height={0}
+          sizes="100vw"
+          alt="Monobank image"
+          priority
+        />
+      </div>
       <div className={styles.tariffsBankWrap}>
         <div className={styles.tariffsMoneyBox}></div>
         <p className={styles.tariffsBankText}>
