@@ -59,13 +59,19 @@ export default function Tariffs() {
     );
   }
 
+  const order = ['start', 'base', 'pro'];
+
   const sortedTariffs =
     !error && tariffsData.length
-      ? [...tariffsData].sort(
-          (a, b) =>
-            Number(a[currencyKey as keyof Tariff]) -
-            Number(b[currencyKey as keyof Tariff])
-        )
+      ? [...tariffsData].sort((a, b) => {
+          const indexA = order.indexOf(a.key);
+          const indexB = order.indexOf(b.key);
+
+          return (
+            (indexA === -1 ? Infinity : indexA) -
+            (indexB === -1 ? Infinity : indexB)
+          );
+        })
       : [];
 
   return (
