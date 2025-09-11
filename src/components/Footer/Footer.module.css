@@ -32,7 +32,7 @@
 
   .menu_wrap {
     display: flex;
-    gap: 122px;
+    gap: 60px;
   }
 
   .second_wrap {
@@ -42,6 +42,12 @@
 }
 
 @media (min-width: 1024px) {
+  .menu_wrap {
+    gap: 122px;
+  }
+}
+
+@media (min-width: 1235px) {
   .wrap {
     flex-direction: row;
     justify-content: space-between;
@@ -198,7 +204,7 @@
 .button_wrap {
   margin-bottom: 40px;
 
- & button {
+  & button {
     margin: 0;
     max-width: 300px !important;
   }
