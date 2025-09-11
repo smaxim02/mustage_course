@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Mustage Course | Terms of use',
-  description: 'Mustage Course | Terms of use',
+  title: 'Mustage Course | Інформація про оплату',
+  description: 'Mustage Course | Інформація про оплату',
 };
 
 export default function RootLayout({
