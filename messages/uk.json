@@ -651,6 +651,9 @@
     "policy": "Публічна оферта",
     "menu": {
       "menu": "Меню",
+      "other": "Інше",
+      "payInfo": "Інформація про оплату",
+      "payPage": "/payment_info",
       "instruments": "Інструменти",
       "possibility": "Можливості",
       "about": "Про нас",

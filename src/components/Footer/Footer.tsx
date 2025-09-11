@@ -36,6 +36,18 @@ export default function Footer() {
                 </ul>
               </nav>
             </div>
+            <div className={styles.nav_wrap}>
+              <p className={styles.menu}>{t('Footer.menu.other')}</p>
+              <nav className={styles.nav}>
+                <ul>
+                  <li>
+                    <Link href={t('Footer.menu.payPage')}>
+                      {t('Footer.menu.payInfo')}
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
             <ul className={styles.social}>
               {socialItems.map((item, index) => (
                 <li key={index}>

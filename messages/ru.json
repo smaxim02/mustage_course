@@ -633,6 +633,9 @@
     "policy": "Публичная оферта",
     "menu": {
       "menu": "Меню",
+      "other": "Другое",
+      "payInfo": "Информация об оплате",
+      "payPage": "/payment_info_ru",
       "instruments": "Инструменты",
       "possibility": "Возможности",
       "about": "О нас",

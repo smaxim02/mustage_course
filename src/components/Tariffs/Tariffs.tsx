@@ -11,6 +11,7 @@ import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import mono from '../../img/tariffs/mono.webp';
 import mono_mob from '../../img/tariffs/mono_mob.webp';
+import Link from 'next/link';
 
 export default function Tariffs() {
   const t = useTranslations();
@@ -121,42 +122,48 @@ export default function Tariffs() {
           );
         })}
       </ul>
-      <div className={styles.tariffsMono}>
-        <Image
-          className={styles.monoDesc}
-          src={mono}
-          width={0}
-          height={0}
-          sizes="100vw"
-          alt="Monobank image"
-          priority
-        />
-        <Image
-          className={styles.monoMob}
-          src={mono_mob}
-          width={0}
-          height={0}
-          sizes="100vw"
-          alt="Monobank image"
-          priority
-        />
-      </div>
-      <div className={styles.tariffsBankWrap}>
-        <div className={styles.tariffsMoneyBox}></div>
-        <p className={styles.tariffsBankText}>
-          {t('Tariffs.bank.first')}
-          <span className={styles.tariffsBankHighlight}>
-            {t('Tariffs.bank.second')}
-          </span>
-        </p>
-        <ul className={styles.tariffsBankList}>
-          {tariffsBanks.map((bank, index) => (
-            <li key={index} className={styles.tariffsBankListItem}>
-              <Icon name={bank} width={48} height={48} />
-            </li>
-          ))}
-        </ul>
-      </div>
+      <Link
+        className={styles.tariffsBankLink}
+        target="_blank"
+        href={t('Footer.menu.payPage')}
+      >
+        <div className={styles.tariffsBankWrap}>
+          <div className={styles.tariffsMoneyBox}></div>
+          <p className={styles.tariffsBankText}>
+            {t('Tariffs.bank.first')}
+            <span className={styles.tariffsBankHighlight}>
+              {t('Tariffs.bank.second')}
+            </span>
+          </p>
+          <ul className={styles.tariffsBankList}>
+            {tariffsBanks.map((bank, index) => (
+              <li key={index} className={styles.tariffsBankListItem}>
+                <Icon name={bank} width={48} height={48} />
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className={styles.tariffsMono}>
+          <Image
+            className={styles.monoDesc}
+            src={mono}
+            width={0}
+            height={0}
+            sizes="100vw"
+            alt="Monobank image"
+            priority
+          />
+          <Image
+            className={styles.monoMob}
+            src={mono_mob}
+            width={0}
+            height={0}
+            sizes="100vw"
+            alt="Monobank image"
+            priority
+          />
+        </div>
+      </Link>
     </section>
   );
 }
