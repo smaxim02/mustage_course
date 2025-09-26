@@ -73,7 +73,11 @@ export default function Footer() {
           </div>
         </div>
         <div className={styles.policy_wrap}>
-          <Link href="/terms" target="_blank" rel="noopener noreferrer">
+          <Link
+            href={t('Footer.policy_link')}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {t('Footer.policy')}
           </Link>
 
