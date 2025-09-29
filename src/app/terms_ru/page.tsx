@@ -7,7 +7,9 @@ const PrivacyPolicy = async () => {
         УСЛОВИЯ ПРЕДОСТАВЛЕНИЯ УСЛУГ
         <br />
         Добро пожаловать на{' '}
-        <a href="https://academy.mustage.team">academy.mustage.team</a>! <br />
+        <a href="https://education.mustage.team">
+          education.mustage.team
+        </a>! <br />
         Нижеуказанные условия предоставления услуг являются публичной офертой и
         содержат все существенные условия договора (далее &ndash; Договор) о
         предоставлении прав доступа к Веб-сайту и Telegram-боту, а также
@@ -646,12 +648,12 @@ const PrivacyPolicy = async () => {
       <p>
         &laquo;Веб-сайт&raquo; -
         <a
-          href="https://academy.mustage.team"
+          href="https://education.mustage.team"
           target="_blank"
           rel="noopener noreferrer"
         >
           {' '}
-          academy.mustage.team{' '}
+          education.mustage.team{' '}
         </a>
       </p>
       <p>

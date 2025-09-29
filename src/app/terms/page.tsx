@@ -7,7 +7,7 @@ const PrivacyPolicy = async () => {
         УМОВИ НАДАННЯ ПОСЛУГ
         <br />
         Ласкаво просимо на{' '}
-        <a href="https://academy.mustage.team">academy.mustage.team</a>!
+        <a href="https://education.mustage.team">education.mustage.team</a>!
         <br />
         Зазначені нижче умови надання послуг є публічною офертою та містять усі
         істотні умови договору (надалі &ndash; Договір) про надання прав доступу
@@ -629,12 +629,12 @@ const PrivacyPolicy = async () => {
       <p>
         &laquo;Вебсайт&raquo; -
         <a
-          href="https://academy.mustage.team"
+          href="https://education.mustage.team"
           target="_blank"
           rel="noopener noreferrer"
         >
           {' '}
-          academy.mustage.team{' '}
+          education.mustage.team{' '}
         </a>
       </p>
       <p>
