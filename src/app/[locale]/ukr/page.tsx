@@ -1,3 +1,5 @@
+'use client';
+
 import Advantages from '@/components/Advantages/Advantages';
 import Answers from '@/components/Ansvers/Answers';
 import Consumables from '@/components/Consumables/Consumables';
@@ -13,10 +15,11 @@ import Start from '@/components/Start/Start';
 import Study from '@/components/Study/Study';
 import Tariffs from '@/components/Tariffs/Tariffs';
 import Working from '@/components/Working/Working';
+import { ConsumablesProvider } from '@/context/ConsumablesContext';
 
 export default function Home() {
   return (
-    <>
+    <ConsumablesProvider>
       <main>
         <Hero />
         <Instruments />
@@ -34,6 +37,6 @@ export default function Home() {
         <Form />
       </main>
       <Footer />
-    </>
+    </ConsumablesProvider>
   );
 }

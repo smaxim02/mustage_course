@@ -7,9 +7,11 @@ import { mustHaveItems } from '@/data/data';
 import logo from '../../img/mustHave/logo.webp';
 import laptop from '../../img/mustHave/laptop.webp';
 import Icon from '@/helpers/Icon';
+import { useConsumables } from '@/context/ConsumablesContext';
 
 export default function MustHave() {
   const t = useTranslations();
+  const { trackName } = useConsumables();
 
   return (
     <section className={styles.mustHave}>
@@ -43,7 +45,7 @@ export default function MustHave() {
                     color="#3fa8a8"
                   />
                 </div>
-                <p>{t(item)}</p>
+                <p>{t(item).replace(/Keitaro/g, trackName)}</p>
               </li>
             ))}
           </ul>
@@ -52,7 +54,7 @@ export default function MustHave() {
           <div>
             <p className={styles.text}>
               <span>{t('MustHave.text.first')}</span>
-              {t('MustHave.text.second')}
+              {t('MustHave.text.second').replace(/Keitaro/g, trackName)}
               <span> {t('MustHave.text.third')}</span>
               {t('MustHave.text.fourth')}
               <span>{t('MustHave.text.fifth')}</span>

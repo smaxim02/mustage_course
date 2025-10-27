@@ -6,10 +6,12 @@ import { useTranslations } from 'next-intl';
 import { workingItems } from '@/data/data';
 import logo from '../../img/working/logo.webp';
 import Button from '../Button/Button';
+import { useConsumables } from '@/context/ConsumablesContext';
 
 export default function Working() {
   const t = useTranslations();
   const BOT_URL = process.env.NEXT_PUBLIC_BOT_URL || '';
+  const { trackName } = useConsumables();
 
   return (
     <section className={styles.working}>
@@ -21,7 +23,7 @@ export default function Working() {
               <div className={styles.numb_wrap}>
                 <span>{item.numb}</span>
               </div>
-              <p>{t(item.text)}</p>
+              <p>{t(item.text).replace(/Keitaro/g, trackName)}</p>
             </li>
           ))}
         </ul>
@@ -36,7 +38,9 @@ export default function Working() {
               priority
             />
           </div>
-          <p className={styles.text}>{t('Working.text')}</p>
+          <p className={styles.text}>
+            {t('Working.text').replace(/Keitaro/g, trackName)}
+          </p>
           <div className={styles.button_par_wrap}>
             <div className={styles.button_wrap}>
               <p>{t('Working.buttonText.first')}</p>

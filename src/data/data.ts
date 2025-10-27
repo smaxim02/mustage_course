@@ -2,10 +2,10 @@ import game from '../img/hero/game.webp';
 import bar from '../img/hero/bar.webp';
 import laptop from '../img/hero/laptop.webp';
 
-import detect from '../img/instruments/detect.webp';
+import anty from '../img/instruments/detect.webp';
 import fb from '../img/instruments/fb.webp';
 import instrument from '../img/instruments/instrument.webp';
-import keitaro from '../img/instruments/keitaro.webp';
+import track from '../img/instruments/binom.png';
 import proxy from '../img/instruments/proxy.webp';
 import spy from '../img/instruments/spy.webp';
 
@@ -98,6 +98,7 @@ export const heroItems = [
 
 export const instrumentsItems = [
   {
+    key: 'anty',
     text: {
       first: 'Instruments.text.detect.first',
       second: 'Instruments.text.detect.second',
@@ -106,9 +107,10 @@ export const instrumentsItems = [
       fifth: 'Instruments.text.detect.fifth',
       sixth: 'Instruments.text.detect.sixth',
     },
-    img: detect,
+    img: anty,
   },
   {
+    key: 'instrument',
     text: {
       first: 'Instruments.text.instrument.first',
       second: 'Instruments.text.instrument.second',
@@ -120,6 +122,7 @@ export const instrumentsItems = [
     img: instrument,
   },
   {
+    key: 'proxy',
     text: {
       first: 'Instruments.text.proxy.first',
       second: 'Instruments.text.proxy.second',
@@ -131,6 +134,7 @@ export const instrumentsItems = [
     img: proxy,
   },
   {
+    key: 'track',
     text: {
       first: 'Instruments.text.keitaro.first',
       second: 'Instruments.text.keitaro.second',
@@ -139,9 +143,10 @@ export const instrumentsItems = [
       fifth: 'Instruments.text.keitaro.fifth',
       sixth: 'Instruments.text.keitaro.sixth',
     },
-    img: keitaro,
+    img: track,
   },
   {
+    key: 'spy',
     text: {
       first: 'Instruments.text.spy.first',
       second: 'Instruments.text.spy.second',
@@ -153,6 +158,7 @@ export const instrumentsItems = [
     img: spy,
   },
   {
+    key: 'fb',
     text: {
       first: 'Instruments.text.fb.first',
       second: 'Instruments.text.fb.second',
